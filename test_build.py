@@ -25,6 +25,13 @@ gg = {"F16": 0.9e9, "Q4_K_M": 600e9, "Q8": 1500e9, "mmproj": 0.2e9}
 c = clean_quants(gg)
 assert "F16" not in c and "mmproj" not in c and "Q4_K_M" in c and "Q8" in c, c
 
+# mtp/multilingual variants dropped when plain quant exists; UD-* kept
+gv = {"Q2_K_S": 10e9, "Q2_K_S-mtp": 10.7e9, "Q2_K_S-multilingual": 10.2e9,
+      "UD-Q2_K_XL": 11e9, "IQ4_XS": 14e9, "Q4_K_M": 17e9}
+cv = clean_quants(gv)
+assert "Q2_K_S" in cv and "Q2_K_S-mtp" not in cv and "Q2_K_S-multilingual" not in cv, cv
+assert "UD-Q2_K_XL" in cv and "IQ4_XS" in cv, cv
+
 # quant parser
 assert quant_of("gemma-3-27b-it-Q4_K_M.gguf") == "Q4_K_M"
 assert quant_of("UD-Q4_K_XL/model.gguf".split("/")[-1]) or True

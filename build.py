@@ -74,6 +74,7 @@ def page(rel, title, desc, body, canonical, jsonld=None):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}">
 <meta name="google-site-verification" content="dHzB4J-n1_k8XEQgWt9VE2OCG2gO8yiE9adtZGUcN-s">
+<meta name="msvalidate.01" content="988EBC0B59488A1F91B3E7D9658B65C3">
 <link rel="canonical" href="{BASE}/{canonical}">
 <meta property="og:type" content="website"><meta property="og:url" content="{BASE}/{canonical}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
@@ -225,6 +226,13 @@ def index_page(models):
         cards.append(f"<a href=\"/{m['slug']}/\">{E(m['name'])}<small>{E(ptxt)} params · smallest build {fmt_gb(need_gb(order[0][1], m['arch']))} · {m['downloads']//1000}k downloads</small></a>")
     body = f"""<h1>Can I run this LLM? Requirements for every model, measured from real files.</h1>
 <p class="sub">{len(models)} models × every quantization × every GPU. Sizes are pulled daily from Hugging Face GGUF repos — not computed from formulas, so what you see is what you download.</p>
+<div class="grid" style="margin-bottom:18px">
+<a href="/what-llm-can-i-run/" style="border-color:var(--acc)">What LLM can I run?<small>interactive picker — type your VRAM</small></a>
+<a href="/best-llm-for-24gb-vram/">Best LLM for 24GB VRAM<small>ranked, measured</small></a>
+<a href="/best-llm-for-rtx-4090/">Best LLM for RTX 4090<small>24GB, ranked</small></a>
+<a href="/best-llm-for-rtx-3060/">Best LLM for RTX 3060<small>12GB, ranked</small></a>
+<a href="/best-llm-for-8gb-vram/">Best LLM for 8GB VRAM<small>ranked, measured</small></a>
+</div>
 <div class="calc"><input id="q" placeholder="Filter models… (type a name)" oninput="flt()"></div>
 <div class="grid" id="cards">{''.join(cards)}</div>
 <script>
@@ -276,6 +284,11 @@ def main():
         with open(os.path.join(d, "index.md"), "w", encoding="utf-8") as f:
             f.write("\n".join(md) + "\n")
         md_lines.append(f"- [{m['name']}]({BASE}/{m['slug']}/index.md): recommended {rec_q} ~{fmt_gb(need_gb(rec_s, m['arch']))}, smallest ~{fmt_gb(need_gb(order[0][1], m['arch']))}")
+    from tiers import build_tier_pages, build_picker
+    tu, tmd = build_tier_pages(models, OUT)
+    pu, pmd = build_picker(models, OUT)
+    urls += tu + pu
+    md_lines += tmd + pmd
     with open(os.path.join(OUT, "llms.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(md_lines) + "\n")
     with open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8") as f:

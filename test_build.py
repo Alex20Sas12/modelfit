@@ -47,4 +47,10 @@ assert 'application/ld+json' in htmlpage and '"@type": "FAQPage"' in htmlpage
 ld = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', htmlpage, re.S).group(1))
 assert ld["@graph"][1]["@type"] == "FAQPage" and len(ld["@graph"][1]["mainEntity"]) == 4
 assert 'More models' in htmlpage and htmlpage.count('<a href="/') > 8
+# tiers: fits() выбирает КРУПНЕЙший квант под потолок
+from tiers import fits, TIERS
+fake = {"ggufs": {"Q2_K": 6e9, "Q4_K_M": 14e9, "Q8_0": 28e9, "mmproj": 0.1e9}, "arch": {}, "params": None}
+f = fits(fake, 24)
+assert f and f[0] == "Q4_K_M", f  # 28*1.2+1.5=35>24*0.92, 14*1.2+1.5=18.3 ok
+assert fits(fake, 8) is None      # 6*1.2+1.5=8.7 > 8*0.92
 print("ALL TESTS PASS")

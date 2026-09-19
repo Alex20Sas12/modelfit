@@ -1,0 +1,23 @@
+Нативный баннер для modelfit-eight.vercel.app 
+
+Встроенный баннер можно разместить в любом месте основной части страницы.
+
+Макет виджета
+
+4:1
+
+Макет виджета
+размер шрифта
+
+Наследовать
+
+размер шрифта
+цвет шрифта
+цвет шрифта
+ГИД
+СОХРАНЯТЬ
+
+<script async="async" data-cfasync="false" src="https://pl31410879.profitableratecpmnetwork.com/2376e478c4be448f43fb6b09e2fff78d/invoke.js"></script> <div id="container-2376e478c4be448f43fb6b09e2fff78d"></div>
+
+ЗАКРЫВАТЬ
+СКОПИРОВАТЬ КОД

@@ -60,13 +60,21 @@ site/ → vercel deploy --prod (XDG_DATA_HOME=$APPDATA/xdg.data) → IndexNow. �
 - Bing: native-setter НЕ регистрирует value в React-форме add-site — только реальный insertText клавишами.
 - Copilot-попап Bing перекрывает клики — закрывать «Not now» перед add-site.
 
+## PINTEREST-КАНАЛ (запущен 19.09)
+- Аккаунт: alexford0289mf (почта alexford0289+mf@gmail.com, читается himalaya -a alex;
+  пароль + board_id в pin_creds.json). Окно `chrome-launch.py modelfit` = порт 9274, ПРЯМОЙ BY-IP.
+- Доска "Local LLM Hardware" (id 1122311238331228592). Профиль: имя ModelFit, bio+сайт заполнены.
+- Первый пин опубликован 19.09 (best-llm-for-24gb-vram), прогрев 7 сохранений — до публикации.
+- Очередь pin_queue.json: 20 пинов (tier/GPU/модельные страницы). Картинки = скриншоты сайта
+  (pin_gen.py, НЕ AI-генерация — антибан-правило pinterest-factory).
+- КРОНЫ: e73c0fefb837 прогрев 15:55 + d31d88483ed4 пин 16:25 (после moneycalcs/feecalcs окон).
+- Грабли: pin_post.py board_url захардкожен на юзера; счётчик «N пин» читается с _boards-страницы.
+
 ## НЕ СДЕЛАНО (честно)
 - Hacker News: reCAPTCHA на регистрации + karma-wall для Show HN (новые акки не постят). Мёртвый путь бесплатно.
 - TAAFT / Toolify: листинг $99 (единственная кнопка Pay). Бюджет $0 → skip.
 - HuggingFace Space: регистрация начата (mail.tm modelfit6046@uberip.com), но требует email-verify
   + постройку Gradio-приложения — отдельная задача, не ядро ранжирования.
-- Pinterest: по правилу «новый сайт = новый аккаунт» нужен отдельный профиль+окно+прогрев-крон
-  (инфра есть: fabrika/feesite/pin_*.py как шаблон). СЛЕДУЮЩИЙ ШАГ для трафика.
 - Reddit r/LocalLLaMA: аудитория живёт там, но спам-правила строгие (10:1), нужен прогрев акка.
 
 ## СЛЕДУЮЩИЕ ШАГИ (по убыванию ROI)

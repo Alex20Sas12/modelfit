@@ -1,0 +1,7 @@
+site/
+__pycache__/
+_*.py
+*.png
+models.json
+urls.txt
+gsc_progress.json

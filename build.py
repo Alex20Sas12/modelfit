@@ -24,11 +24,15 @@ QUANT_BPW = {  # fallback bits/weight only if no measured file for that tier
 }
 
 def clean_quants(gg):
-    """Drop stubs (mmproj/vision files ~<1% of median)."""
+    """Drop stubs (mmproj/vision files ~<1% of median) and -mtp/-multilingual variants
+    when the plain quant exists (same model, auxiliary-module variants only)."""
     if not gg:
         return {}
     med = statistics.median(gg.values())
-    return {q: s for q, s in gg.items() if s >= med * 0.05}
+    gg = {q: s for q, s in gg.items() if s >= med * 0.05}
+    plain = {q.split("-")[0] for q in gg}
+    return {q: s for q, s in gg.items()
+            if "-" not in q or q.split("-")[0] not in plain or not any(v in q.lower() for v in ("mtp", "multilingual", "mmproj", "vision"))}
 
 def kv_cache_gb(arch, ctx):
     """Exact GQA KV: 2 * layers * kv_heads * head_dim * ctx * 2 bytes."""

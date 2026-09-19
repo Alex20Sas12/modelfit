@@ -1,0 +1,15 @@
+{
+ "email": "alexford0289+mf@gmail.com",
+ "password": "ModelFit26xP!nd",
+ "username": "alexford0289mf",
+ "display_name": "ModelFit",
+ "board": "Local LLM Hardware",
+ "board_id": "1122311238331228592",
+ "board_slug": "local-llm-hardware",
+ "window": 9274,
+ "profile_dir": "chrome-modelfit-profile",
+ "direct_ip": true,
+ "site": "https://modelfit-eight.vercel.app",
+ "created": "2026-09-19",
+ "note": "читай письма alex через himalaya; прогрев pin_warmup.py, пин pin_daily.py (крон)"
+}

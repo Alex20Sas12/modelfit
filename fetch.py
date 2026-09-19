@@ -9,6 +9,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 API = "https://huggingface.co/api"
 UA = {"User-Agent": "modelfit/1.0"}
 HYPE = ["kimi-k3", "gemma-4", "deepseek-v4", "qwen3.8", "glm-5", "kimi-k2"]  # ponytail: refresh list when new wave drops
+# low/mid-tier popular models so "best llm for 8/12/16GB" pages have real data
+SMALL = ["qwen3-8b", "qwen3-4b", "llama-3.1-8b", "phi-4", "gemma-3-4b", "gemma-3-12b",
+         "ministral-3", "qwen2.5-7b", "qwen3-14b", "mistral-small", "llama-3.2-3b", "granite-4"]
 
 def get(url, tries=2):
     for i in range(tries):
@@ -28,8 +31,14 @@ def trending_ids(limit=40):
     j = get(f"{API}/models?filter=gguf&sort=trendingScore&direction=-1&limit={limit}")
     return [m["id"] for m in (j or [])]
 
+def top_ids(limit=100):
+    """Top GGUF repos by downloads — covers every VRAM tier, not just the hype."""
+    j = get(f"{API}/models?filter=gguf&sort=downloads&direction=-1&limit={limit}")
+    return [m["id"] for m in (j or [])]
+
 def quant_of(path):
     # "gemma-3-27b-it-Q4_K_M.gguf" -> "Q4_K_M"; split files "-00001-of-00005" collapse
+    path = re.sub(r"-\d{4,}-of-\d{4,}", "", path)  # shard suffix first, else every shard becomes its own quant
     m = re.search(r"(Q\d+_\d+(_[SMLX]+)?|IQ\d+_[A-Z_]+|UD-[A-Z0-9_]+|Q\d+_\d|F16|BF16|Q\d+_[A-Z]+_XL)", path)
     if m:
         return m.group(1)
@@ -54,6 +63,9 @@ def fetch_model(mid):
                 if re.search(r"(Q\d|IQ\d|F16|BF16)", f["path"], re.I):
                     walk(urllib.parse.quote(f["path"]))
             elif f["path"].endswith(".gguf"):
+                base = f["path"].rsplit("/", 1)[-1].lower()
+                if base.startswith(("mmproj", "mtp", "vision", "clip", "textmm")):
+                    continue  # auxiliary modules, not full-model weights
                 q = quant_of(f["path"]) or quant_of(f["path"].split("/")[-2] if "/" in f["path"] else "")
                 if q:
                     ggufs[q] = ggufs.get(q, 0) + f.get("size", 0)  # sums split shards
@@ -86,9 +98,10 @@ def fetch_model(mid):
 
 def main():
     ids = []
-    for kw in HYPE:
-        ids += search_ids(kw)
+    for kw in HYPE + SMALL:
+        ids += search_ids(kw, limit=5)
     ids += trending_ids()
+    ids += top_ids()
     seen, out = set(), []
     for mid in ids:
         if mid in seen:
@@ -97,11 +110,9 @@ def main():
         m = fetch_model(mid)
         if m:
             out.append(m)
-            print("ok", mid, len(m["ggufs"]), "quants")
-        else:
-            print("skip", mid)
-        time.sleep(0.3)
-        if len(out) >= 40:
+            print("ok", mid, len(m["ggufs"]), "quants", flush=True)
+        time.sleep(0.2)
+        if len(out) >= 110:
             break
     out.sort(key=lambda x: -x["downloads"])
     with open(os.path.join(HERE, "models.json"), "w", encoding="utf-8") as f:

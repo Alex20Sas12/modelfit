@@ -34,12 +34,13 @@ def main():
         lines.append(f"DEPLOY FAIL rc={r.returncode}: {(r.stdout+r.stderr)[-400:]}")
     else:
         lines.append("deploy ok")
-    # IndexNow
+    # IndexNow (keyLocation обязателен — без него api.indexnow.org отдаёт 403)
     key = open(os.path.join(HERE, "indexnow_key.txt")).read().strip()
     urls = open(os.path.join(HERE, "urls.txt")).read().split()
-    payload = json.dumps({"host": "modelfit-eight.vercel.app", "key": key, "urlList": urls})
+    payload = json.dumps({"host": "modelfit-eight.vercel.app", "key": key,
+                          "keyLocation": f"https://modelfit-eight.vercel.app/{key}.txt", "urlList": urls})
     open(os.path.join(HERE, "indexnow_payload.json"), "w").write(payload)
-    rc, out = run(f'curl -s -o NUL -w "%{{http_code}}" -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json" --data @indexnow_payload.json')
+    rc, out = run(f'curl -s -o NUL -w "%{{http_code}}" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" -X POST "https://api.indexnow.org/indexnow" -H "Content-Type: application/json" --data @indexnow_payload.json')
     lines.append(f"indexnow {out.strip()} ({len(urls)} urls)")
     with open(LOG, "a", encoding="utf-8") as f:
         import datetime

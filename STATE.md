@@ -1,48 +1,77 @@
-# ModelFit — STATE.md (создан 19.09.2026)
+# ModelFit — STATE.md (создан 19.09.2026, SEO-push сессия 2)
 
 ## Что это
 «Can I run this LLM?» — вердикты VRAM/RAM для свежих нейромоделий. Фишка: цифры —
 НЕ формулы и НЕ пресеты, а РЕАЛЬНЫЕ размеры GGUF-файлов из HuggingFace API
-(tree API, суммирует сплит-шарды) + KV-cache из config.json где доступен + overhead 15%.
-Автообновление кроном = страница для новой модели появляется раньше, чем блогеры напишут гайд.
+(бесплатный, без ключа). Крон ежедневно тянет новые модели и пересобирает сайт.
 
-## Координаты
-- Сайт: https://modelfit-eight.vercel.app (канон! modelfit.vercel.app занят чужим «Roperly»)
-- Vercel-проект: modelfit (аккаунт keyt9750-7169), деплой из site/
-- Штаб: fabrika/modelsite/ (fetch.py, build.py, test_build.py, refresh.py, models.json, urls.txt)
-- Adsterra: сайт 6062424, категория «Файловые хостинги», блоки NativeBanner_1 (31310380)
-  + SocialBar_1 (31310853), оба Активные; коды в adsterra_codes.json, вшиты в build.py
-- GSC: ресурс https://modelfit-eight.vercel.app/ верифицирован АВТОМАТИЧЕСКИ
-  аккаунт-токеном dHzB4J-n1_k8XEQgWt9VE2OCG2gO8yiE9adtZGUcN-s (мета-тег в build.py;
-  тот же токен что feecalcs/moneycalcs — наследуется от Google alexford0289)
-- Sitemap: /sitemap.xml отправлен в GSC 19.09
-- IndexNow: 41 URL принят (202) 19.09, key ecc6d98e…txt лежит в корне сайта
+## ЖИВОЙ URL
+https://modelfit-eight.vercel.app (Vercel-проект `modelfit`; modelfit.vercel.app ЗАНЯТ чужим!)
 
-## Кроны
-- b0bc91a7d033 modelfit-daily-refresh 09:40 МСК (no_agent): refresh.py =
-  fetch -> тесты -> build -> vercel deploy -> IndexNow. Молча при успехе, алерт при ошибке.
-- f852cc3390ca modelfit-gsc-index 10:45 МСК (no_agent): батч 3 URL/день «Запросить
-  индексирование» (окно 9232, gsc_inspect.py, прогресс gsc_progress.json).
-  Квота GSC общая со всеми сайтами, сброс ~10:00 МСК.
+## Масштаб (19.09, после SEO-push)
+- 110 страниц моделей + 8 VRAM-tier + 14 GPU/Mac-страниц + picker = 134 URL
+- tier-страницы «Best LLM for XGB VRAM» (8-96GB) — HOT-запросы (Google autocomplete 10/10)
+- GPU-страницы «Best LLM for RTX 4090/3090/5090/3060, MacBook Pro M4...» — HOT (5-7 подсказок)
+- Интерактивный picker /what-llm-can-i-run/ — «what llm can i run locally calculator» = HOT
 
-## Конвейер (повтор = refresh.py, всё остальное вручную не нужно)
-python fetch.py -> python test_build.py -> python build.py -> cd site && vercel deploy --prod --yes
+## SEO (сессия 2, 19.09) — что внедрено
+- JSON-LD: FAQPage+BreadcrumbList+Dataset (модели), ItemList+WebSite (главная), ItemList (tiers)
+- Видимый FAQ-блок на страницах моделей (совпадает с JSON-LD)
+- llms.txt + markdown-двойники каждой страницы (index.md) — AI-цитируемость (Perplexity/ChatGPT/Claude)
+- robots.txt: все AI-боты Allow (GPTBot/PerplexityBot/ClaudeBot/Google-Extended/Applebot...)
+- Внутренние ссылки: «More models» (8 родственных) + GPU/tier-сетка на каждой tier-странице
+- canonical + og:url + twitter:card, sitemap lastmod=сегодня
+- Вшиваются в ГЕНЕРАТОР (build.py/tiers.py) — крон-пересборка сохраняет всё
 
-## НЕ СДЕЛАНО (следующие шаги)
-1. Pinterest-трафик: нужен НОВЫЙ аккаунт + новое окно (не переиспользовать существующие —
-   приказ владельца). Образец: fabrika/feesite/pin_reg.py + pin_warmup.py + pin_daily.py,
-   окно 9272. Пины = скриншоты вердиктов («Kimi K3: 466 GB minimum — honest answer inside»).
-2. Reddit (u/kate_makes_sheets): r/LocalLLaMA — там живёт ЦА. Правила: 10:1, без прямых
-   ссылок-спама; формат «посчитал требования Kimi K3 по реальным файлам, вот таблица» + ссылка.
-3. Соцбар Adsterra проверять на показы через 2-3 дня (зона новая).
-4. Первые центы: 2-4 недели (как MoneyCalcs). Не oversell.
+## Верификации
+- GSC: modelfit-eight.vercel.app подтверждён АВТОМАТИЧЕСКИ (мета-тег google-site-verification
+  dHzB4J-n1_k8XEQgWt9VE2OCG2gO8yiE9adtZGUcN-s = общий на аккаунт alexford0289 для всех сайтов)
+  + sitemap.xml отправлен. Квота индексации сегодня съедена другими сайтами — крон добьёт.
+- Bing WMT: сайт добавлен + верифицирован (мета-тег msvalidate.01 988EBC0B59488A1F91B3E7D9658B65C3)
+  + sitemap в обработке. Bing UI-селектор «застревает» — переключение через _bing_switch2.py.
+- IndexNow: 200, 134 URL. ВАЖНО: key=ecc6d98e... (ФАЙЛ indexnow_key.txt в modelsite, НЕ toolsite!)
+  + keyLocation обязателен, иначе 403. Ключ-файл живёт в корне сайта.
 
-## Грабли (записаны)
-- modelfit.vercel.app ЗАНИМАЕТ чужой проект — Vercel дал суффикс -eight.
-- Диалог Adsterra: опция «Другой»/форматы за краем вьюпорта — ОБЯЗАТЕЛЬНО
-  scrollIntoView({block:'center'}) перед кликом.
-- Вкладки 9222 убивает крон-чистильщик bffc58293608 (>30 мин) — Adsterra-скрипты
-  должны сами открывать вкладку (_nav9222.py) и не зависеть от долгоживущих.
-- tree API пагинирует подпапки: GGUF больших моделей лежат в Q*/IQ*-директориях — fetch.py
-  ходит рекурсивно.
-- HF API без ключа: rate-limit мягкий, 40 моделей за ~4 мин ок.
+## Монетизация
+- Adsterra сайт 6062424 (категория Filehosts): NativeBanner 31310380 (pl31410879...2376e478...)
+  + SocialBar 31310853 (pl31411352...9f5bf63f...). ОБА активны, коды вшиты в build.py, CDN 200.
+  Коды в adsterra_codes.json.
+
+## БЭКЛИНКИ
+- GitHub: https://github.com/Alex20Sas12/modelfit (публичный репо, README с живой таблицей) — dofollow
+- dev.to: пост опубликован (акк kata_omel_3f34301f3ec5928, вход через Google) — dofollow
+  https://dev.to/kata_omel_3f34301f3ec5928/i-built-a-can-i-run-this-llm-site-...-3gd4
+- AlternativeTo: акк уже существовал (email, не Google) — листинг ShablonyPRO в модерации с 07.09;
+  сброс пароля для modelfit не завершён (письмо не пришло за 2 мин). НИЗКИЙ приоритет.
+
+## КРОНЫ (deliver=local, no_agent)
+- b0bc91a7d033 modelfit-daily-refresh 09:40 МСК = refresh.py (fetch→test→build→deploy→indexnow)
+- f852cc3390ca modelfit-gsc-index 10:45 МСК = modelfit_gsc.py (GSC URL inspection, самолечащаяся обёртка)
+
+## КОНВЕЙЕР
+python fetch.py (HF API, 110 моделей) → test_build.py (гейт формул) → build.py → 
+site/ → vercel deploy --prod (XDG_DATA_HOME=$APPDATA/xdg.data) → IndexNow. Всё в refresh.py.
+
+## Грабли (записаны в скилл tool-site-factory)
+- GGUF-парсер: mtp-/mmproj-/vision-/multilingual-файлы — НЕ полная модель. fetch.py walk()
+  пропускает их по имени файла; clean_quants() добивает варианты «Q3_K_M-vision» (plain-квант приоритетнее).
+  Без этого Qwen3.8-27B показывал «Q4_0 3.5GB» (это mtp-модуль) — портило tier-рейтинги.
+- Split-shard GGUF: quant_of() сначала снимает «-00001-of-00013», иначе каждый шард = свой «квант».
+- Bing: native-setter НЕ регистрирует value в React-форме add-site — только реальный insertText клавишами.
+- Copilot-попап Bing перекрывает клики — закрывать «Not now» перед add-site.
+
+## НЕ СДЕЛАНО (честно)
+- Hacker News: reCAPTCHA на регистрации + karma-wall для Show HN (новые акки не постят). Мёртвый путь бесплатно.
+- TAAFT / Toolify: листинг $99 (единственная кнопка Pay). Бюджет $0 → skip.
+- HuggingFace Space: регистрация начата (mail.tm modelfit6046@uberip.com), но требует email-verify
+  + постройку Gradio-приложения — отдельная задача, не ядро ранжирования.
+- Pinterest: по правилу «новый сайт = новый аккаунт» нужен отдельный профиль+окно+прогрев-крон
+  (инфра есть: fabrika/feesite/pin_*.py как шаблон). СЛЕДУЮЩИЙ ШАГ для трафика.
+- Reddit r/LocalLLaMA: аудитория живёт там, но спам-правила строгие (10:1), нужен прогрев акка.
+
+## СЛЕДУЮЩИЕ ШАГИ (по убыванию ROI)
+1. Pinterest-конвейер (новый акк, 1 пин/день на tier/GPU-страницы — визуал = таблицы вердиктов)
+2. Reddit r/LocalLLaMA — ПОЛЕЗНЫЙ пост-гайд (не ссылка), акк с прогревом
+3. HF Space (Gradio-обёртка picker) = DR90+ бэклинк + встроенный трафик
+4. Больше моделей: fetch.py top_ids(200) + языковые страницы (/es/ /de/ /ru/) под geo-спрос
+5. Бэклинки из комментов под GitHub-issues «how much vram for X» (полезный ответ + ссылка)

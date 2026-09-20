@@ -3,13 +3,61 @@
 VRAM model: weights (measured GGUF bytes) + overhead. If config.json gave arch,
 KV cache is computed exactly (GQA formula); otherwise flat +20%/min 1.5 GB rule.
 """
-import json, os, html, re, statistics
+import json, os, html, re, statistics, urllib.parse
+from PIL import Image, ImageDraw, ImageFont
+
+def _font(size):
+    for p in [r"C:\Windows\Fonts\arialbd.ttf", r"C:\Windows\Fonts\arial.ttf"]:
+        if os.path.exists(p):
+            return ImageFont.truetype(p, size)
+    return ImageFont.load_default()
+
+def make_og(path, title, line2, line3):
+    """1200x630 social-preview card (dark, brand-green)."""
+    img = Image.new("RGB", (1200, 630), "#0d1117")
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, 1200, 8], fill="#3fb950")
+    d.text((60, 40), "ModelFit", font=_font(44), fill="#3fb950")
+    d.text((60, 100), "Measured VRAM requirements — updated daily from Hugging Face", font=_font(26), fill="#8b98a9")
+    # wrap title
+    f_t = _font(56)
+    words, lines, cur = title.split(), [], ""
+    for w in words:
+        if d.textlength(cur + " " + w, font=f_t) < 1060:
+            cur += (" " if cur else "") + w
+        else:
+            lines.append(cur); cur = w
+    if cur: lines.append(cur)
+    y = 220
+    for ln in lines[:2]:
+        d.text((60, y), ln, font=f_t, fill="#e6edf3"); y += 68
+    d.text((60, 420), line2, font=_font(34), fill="#e6edf3")
+    d.text((60, 475), line3, font=_font(30), fill="#8b98a9")
+    d.text((60, 560), "modelfit-eight.vercel.app — updated daily from Hugging Face", font=_font(24), fill="#3fb950")
+    img.save(path, "PNG")
+
+BADGE = """<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="20"><rect width="{split}" height="20" fill="#555"/><rect x="{split}" width="{rest}" height="20" fill="#3fb950"/><text x="{tx1}" y="14" fill="#fff" font-family="Verdana" font-size="11">ModelFit</text><text x="{tx2}" y="14" fill="#fff" font-family="Verdana" font-size="11">{label}</text></svg>"""
+
+def make_badge(path, label):
+    w1, w2 = 58, 8 * len(label) + 20
+    svg = BADGE.format(w=w1 + w2, split=w1, rest=w2, tx1=6, tx2=w1 + 8, label=html.escape(label))
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(svg)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "site")
 os.makedirs(OUT, exist_ok=True)
 E = html.escape
 BASE = os.environ.get("MF_BASE", "https://modelfit-eight.vercel.app")  # ponytail: replace with paid domain when first real money
+
+# Share buttons: JS fills current URL+title — one static template for all pages
+SHARE_TMPL = """<span>Share this page:</span>
+<a href="#" onclick="window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(document.title)+' '+encodeURIComponent(location.href),'_blank','width=600,height=400');return false">𝕏 Post</a>
+<a href="#" onclick="window.open('https://www.reddit.com/submit?url='+encodeURIComponent(location.href)+'&title='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false">Reddit</a>
+<a href="#" onclick="window.open('https://news.ycombinator.com/submitlink?u='+encodeURIComponent(location.href)+'&t='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false">Hacker News</a>
+<a href="#" onclick="window.open('https://t.me/share/url?url='+encodeURIComponent(location.href)+'&text='+encodeURIComponent(document.title),'_blank','width=600,height=400');return false">Telegram</a>
+<a href="#" onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(document.title+' '+location.href),'_blank','width=600,height=400');return false">WhatsApp</a>
+<a href="#" onclick="if(navigator.share){navigator.share({title:document.title,url:location.href})};return false">More…</a>"""
 
 GPUS = [  # (name, vram_gb)
     ("RTX 3060 12GB", 12), ("RTX 4060 Ti 16GB", 16), ("RTX 3090 24GB", 24), ("RTX 4090 24GB", 24),
@@ -68,12 +116,15 @@ def verdicts(need):
         out.append((name, v, "yes" if ok else ("tight" if need <= v else "no")))
     return out
 
-def page(rel, title, desc, body, canonical, jsonld=None):
+def page(rel, title, desc, body, canonical, jsonld=None, og_image="og.png"):
     ad = """<script async="async" data-cfasync="false" src="https://pl31410879.profitableratecpmnetwork.com/2376e478c4be448f43fb6b09e2fff78d/invoke.js"></script> <div id="container-2376e478c4be448f43fb6b09e2fff78d"></div>"""
     body = body.replace('<div class="ad-slot"></div>', f'<div class="ad-slot">{ad}</div>')
-    if ad not in body:  # index page has no slot
-        body = body.replace("</main>", f'<div class="ad-slot">{ad}</div></main>')
     ld = f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ""
+    og_img = f'<meta property="og:image" content="{BASE}/{og_image}"><meta name="twitter:image" content="{BASE}/{og_image}">' if og_image else ""
+    share = f'<div class="share">{SHARE_TMPL}</div>'
+    if ad not in body:  # index/tier pages have no ad-slot div — append at the end
+        body = body + f'<div class="ad-slot">{ad}</div>'
+    body = body + share
     return f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{E(title)}</title><meta name="description" content="{E(desc)}">
@@ -82,7 +133,8 @@ def page(rel, title, desc, body, canonical, jsonld=None):
 <link rel="canonical" href="{BASE}/{canonical}">
 <meta property="og:type" content="website"><meta property="og:url" content="{BASE}/{canonical}">
 <meta property="og:title" content="{E(title)}"><meta property="og:description" content="{E(desc)}">
-<meta name="twitter:card" content="summary"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{E(title)}"><meta name="twitter:description" content="{E(desc)}">
+{og_img}
 {ld}
 <style>
 :root{{--bg:#0d1117;--card:#161b26;--tx:#e6edf3;--mut:#8b98a9;--acc:#3fb950;--warn:#d29922;--bad:#f85149;--line:#252d3a}}
@@ -105,6 +157,10 @@ footer{{border-top:1px solid var(--line);color:var(--mut);font-size:13px;padding
 details{{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin:8px 0}}details summary{{cursor:pointer;font-weight:600}}
 .crumb{{font-size:13px;color:var(--mut);margin-bottom:10px}}.crumb a{{color:var(--mut)}}
 .ad-slot{{min-height:90px;margin:18px 0}}
+.share{{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:26px 0 6px}}
+.share span{{color:var(--mut);font-size:14px}}
+.share a{{display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 13px;text-decoration:none;color:var(--tx);font-size:14px;font-weight:600}}
+.share a:hover{{border-color:var(--acc)}}
 </style></head><body>
 <header><div class="wrap"><a class="logo" href="/">Model<span>Fit</span></a>
 <span class="note" style="margin-left:10px">Can I run this LLM? Real file sizes, live from Hugging Face.</span></div></header>
@@ -260,6 +316,12 @@ def main():
     models = json.load(open(os.path.join(HERE, "models.json"), encoding="utf-8"))
     models = [m for m in models if clean_quants(m["ggufs"])]
     models.sort(key=lambda m: -m["downloads"])
+    # global OG card (used by index, picker, all model pages)
+    make_og(os.path.join(OUT, "og.png"), "Can I run this LLM?",
+            f"{len(models)} models measured", "Real GGUF file sizes, not formulas")
+    # badges for README linking (growth loop: devs embed badge -> free backlink)
+    for label in ["can-i-run", "vram", "gguf", "local-llm"]:
+        make_badge(os.path.join(OUT, f"badge-{label}.svg"), label)
     with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as f:
         f.write(index_page(models))
     today = __import__("datetime").date.today().isoformat()
@@ -333,7 +395,18 @@ Sitemap: {BASE}/sitemap.xml
 """)
     with open(os.path.join(HERE, "urls.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(urls))
-    print(f"built {len(models)} model pages + index + llms.txt -> site/")
+    # public JSON dump — developers cite/link tools that give them data (growth loop #2)
+    api_dir = os.path.join(OUT, "api")
+    os.makedirs(api_dir, exist_ok=True)
+    slim = [{"id": m["id"], "name": m["name"], "downloads": m["downloads"],
+             "page": f"{BASE}/{m['slug']}/",
+             "ggufs_gb": {q: round(s / 1e9, 2) for q, s in sorted(clean_quants(m["ggufs"]).items(), key=lambda x: x[1])}}
+            for m in models]
+    with open(os.path.join(api_dir, "models.json"), "w", encoding="utf-8") as f:
+        json.dump({"updated": today, "source": "Hugging Face API (measured GGUF file sizes)",
+                   "license": "CC BY 4.0 — attribution: ModelFit (modelfit-eight.vercel.app)",
+                   "models": slim}, f, ensure_ascii=False)
+    print(f"built {len(models)} model pages + index + llms.txt + og/badges/api -> site/")
 
 if __name__ == "__main__":
     main()

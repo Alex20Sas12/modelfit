@@ -12,14 +12,14 @@
   "title": "Best LLMs for RTX 3060 12GB",
   "desc": "What can you actually run on a 12GB card? Measured requirements, updated daily from Hugging Face. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-3060/",
-  "posted": false
+  "posted": "2026-09-19"
  },
  {
   "slug": "best-llm-for-16gb-vram",
   "title": "Best LLMs for 16GB VRAM",
   "desc": "Real file sizes + KV cache math. Find the largest model that fits your GPU. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-16gb-vram/",
-  "posted": false
+  "posted": "2026-09-20"
  },
  {
   "slug": "best-llm-for-macbook-pro-m4-24gb",

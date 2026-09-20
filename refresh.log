@@ -1,1 +1,6 @@
 2026-09-19T10:31:07 | fetch ok, 40 models | deploy ok | indexnow 200 (41 urls)
+2026-09-20T09:48:13 | fetch ok, 110 models | DEPLOY FAIL rc=1: Vercel CLI 59.23.2 (Node.js 24.16.0)
+Deploying modelfit
+Error: Not authorized
+Contact Support: https://vercel.link/help
+ | indexnow 200 (134 urls)

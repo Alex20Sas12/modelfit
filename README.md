@@ -1,49 +1,70 @@
-# ModelFit — Can I Run This LLM?
+# ModelFit — Can I run this LLM?
 
-**Measured** VRAM/RAM requirements for trending local LLMs. Every number is the actual GGUF
-file size published on Hugging Face (split shards summed) + KV cache (GQA formula from
-config.json where available) + runtime overhead — not a params x bits/8 estimate.
+[![ModelFit can-i-run](https://modelfit-eight.vercel.app/badge-can-i-run.svg)](https://modelfit-eight.vercel.app/what-llm-can-i-run/)
 
-Live site: **https://modelfit-eight.vercel.app** (updated daily by cron, 40+ models,
-per-quant tables, GPU verdicts from RTX 3060 to Mac Studio 512GB).
+**Live site: https://modelfit-eight.vercel.app**
 
-Why: for Kimi K3 five popular pages showed four different VRAM numbers
-(594 GB / 1.51 TB / 1.68 TB / "impossible") because they all guess. Measured files don't lie.
+VRAM/RAM requirements for 110+ trending local LLMs — Kimi K3, Gemma 4, DeepSeek V4, Qwen 3.8, GLM-5, Llama 3.1 and every model trending on Hugging Face GGUF.
 
-## Top models by downloads (smallest published build)
+## Why this site is different
 
-| Model | Downloads | Smallest build |
-|---|---|---|
-| [Qwen3.8-27B](https://modelfit-eight.vercel.app/unsloth-qwen3-8-27b-gguf/) | 7628k | 6.2 GB |
-| [Huihui-Qwen3.8-27B-abliterated](https://modelfit-eight.vercel.app/huihui-ai-huihui-qwen3-8-27b-abliterated-gguf/) | 2832k | 10.0 GB |
-| [Qwen3.8-27B-Uncensored](https://modelfit-eight.vercel.app/jonathancoletti-qwen3-8-27b-uncensored-gguf/) | 2363k | 1.7 GB |
-| [Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP](https://modelfit-eight.vercel.app/hauhaucs-qwen3-8-27b-uncensored-hauhaucs-aggressive-mtp-gguf/) | 2282k | 10.3 GB |
-| [Qwen3.8-27B](https://modelfit-eight.vercel.app/lmstudio-community-qwen3-8-27b-gguf/) | 2052k | 16.8 GB |
-| [Gemma-4-E4B-Uncensored-HauhauCS-Aggressive](https://modelfit-eight.vercel.app/hauhaucs-gemma-4-e4b-uncensored-hauhaucs-aggressive/) | 1995k | 4.4 GB |
-| [deepseek-v4](https://modelfit-eight.vercel.app/antirez-deepseek-v4-gguf/) | 1964k | 3.8 GB |
-| [Qwen3.8-27B-Heretic-Abliterated-Uncensored](https://modelfit-eight.vercel.app/0bserverx-qwen3-8-27b-heretic-abliterated-uncensored-gguf/) | 1884k | 10.2 GB |
-| [gemma-4-E4B-it](https://modelfit-eight.vercel.app/ggml-org-gemma-4-e4b-it-gguf/) | 1507k | 4.7 GB |
-| [Qwen3.8-Flash-Next](https://modelfit-eight.vercel.app/unsloth-qwen3-8-flash-next-gguf/) | 1469k | 72.5 GB |
-| [Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP](https://modelfit-eight.vercel.app/davidau-qwen3-8-27b-turbo-fable-cold-fusion-735-882-heretic-uncensored-neo-coder-max-mtp-gguf/) | 1197k | 23.8 GB |
-| [gemma-4-12B-it-qat](https://modelfit-eight.vercel.app/unsloth-gemma-4-12b-it-qat-gguf/) | 1164k | 6.7 GB |
-| [Qwen3.8-27B-GSQ-RCO](https://modelfit-eight.vercel.app/ista-daslab-qwen3-8-27b-gsq-rco-gguf/) | 1078k | 17.2 GB |
-| [gemma-4-12b-it](https://modelfit-eight.vercel.app/unsloth-gemma-4-12b-it-gguf/) | 779k | 4.2 GB |
-| [gemma-4-12B-agentic-fable5-composer2.5-v2-3.5x-tau2](https://modelfit-eight.vercel.app/yuxinlu1-gemma-4-12b-agentic-fable5-composer2-5-v2-3-5x-tau2-gguf/) | 703k | 6.1 GB |
-| [gemma-4-26B-A4B-it-qat](https://modelfit-eight.vercel.app/unsloth-gemma-4-26b-a4b-it-qat-gguf/) | 663k | 1.2 GB |
-| [GLM-5.3-Flash](https://modelfit-eight.vercel.app/unsloth-glm-5-3-flash-gguf/) | 595k | 1.1 GB |
-| [Huihui-DeepSeek-V4-Flash-0731-abliterated](https://modelfit-eight.vercel.app/huihui-ai-huihui-deepseek-v4-flash-0731-abliterated-gguf/) | 527k | 86.7 GB |
-| [Kimi-K3](https://modelfit-eight.vercel.app/unsloth-kimi-k3-gguf/) | 494k | 466.4 GB |
-| [GLM-5.3](https://modelfit-eight.vercel.app/unsloth-glm-5-3-gguf/) | 476k | 216.7 GB |
+Every number is **measured, not computed**:
 
-## Data pipeline
+- Sizes come from the **actual GGUF files** published on Hugging Face (unsloth, bartowski, ggml-org, lmstudio-community repos), pulled daily via the public HF API.
+- Other sites use the naive `params × bits/8` formula and disagree with each other by 2× on the same model (Kimi K3: 594 GB vs 1.51 TB across five guides). The formula ignores embedding tables, unquantized tensors, and container overhead. The file size never lies.
+- KV cache is computed exactly from `config.json` (GQA formula) when published.
+- Auxiliary files (mmproj/mtp/vision modules) are filtered out — they are NOT full-model weights (a common source of wrong "requirements" numbers elsewhere).
 
-- `fetch.py` — pulls trending GGUF repos from the public HF API (no key), walks repo trees,
-  sums shard sizes per quant, parses config.json for exact KV math.
-- `build.py` — static site generator: one page per model + llms.txt + markdown twins + FAQPage/Dataset/BreadcrumbList JSON-LD.
-- `test_build.py` — formula gate (KV cache verified against llama.cpp reference numbers).
-- `refresh.py` — daily cron: fetch -> test -> build -> deploy -> IndexNow ping (Bing/Yandex).
+## What you get
+
+| Page | Example |
+|---|---|
+| Per-model verdicts + quant tables | [/unsloth-kimi-k3-gguf/](https://modelfit-eight.vercel.app/unsloth-kimi-k3-gguf/) |
+| Ranked "best LLM for X" | [/best-llm-for-rtx-4090/](https://modelfit-eight.vercel.app/best-llm-for-rtx-4090/), [/best-llm-for-24gb-vram/](https://modelfit-eight.vercel.app/best-llm-for-24gb-vram/), [/best-llm-for-macbook-pro-m4-24gb/](https://modelfit-eight.vercel.app/best-llm-for-macbook-pro-m4-24gb/) |
+| Interactive picker | [/what-llm-can-i-run/](https://modelfit-eight.vercel.app/what-llm-can-i-run/) |
+| Machine-readable data | [/api/models.json](https://modelfit-eight.vercel.app/api/models.json) |
+| For AI engines | [/llms.txt](https://modelfit-eight.vercel.app/llms.txt), markdown twin at `<any-page>/index.md` |
+
+## Use the data in your own tools
+
+```
+GET https://modelfit-eight.vercel.app/api/models.json
+```
+
+```json
+{
+  "updated": "2026-09-19",
+  "models": [{
+    "id": "unsloth/Kimi-K3-GGUF",
+    "name": "Kimi-K3",
+    "downloads": 2197706,
+    "page": "https://modelfit-eight.vercel.app/unsloth-kimi-k3-gguf/",
+    "ggufs_gb": {"UD-Q1_0": 466.44, "UD-Q4_K_XL": 1508.7, "...": 0}
+  }]
+}
+```
+
+License: **CC BY 4.0** — free for anything, attribution required: `Data: ModelFit (modelfit-eight.vercel.app), measured from Hugging Face GGUF files`.
+
+Badge for your README (links here):
+
+```markdown
+[![ModelFit](https://modelfit-eight.vercel.app/badge-can-i-run.svg)](https://modelfit-eight.vercel.app/what-llm-can-i-run/)
+```
+
+## How it works (this repo)
+
+```
+fetch.py    HF API (no key) -> models.json (tree walk, shard-aware, aux-file filter)
+build.py    -> 134 static pages + llms.txt + og cards + api dump
+tiers.py    -> "best LLM for XGB/GPU" ranked pages
+test_build.py  formula gate (KV cache vs llama.cpp reference tables)
+refresh.py  fetch -> test -> build -> vercel deploy -> IndexNow  (daily cron)
+```
+
+The site regenerates itself daily — when a new model lands on Hugging Face trending,
+its verdict page exists within ~24h, usually before any human writes a guide.
 
 ## License
 
-Code: MIT. Data derived from Hugging Face public API; model sizes belong to their uploaders
-(unsloth, bartowski, lmstudio-community, etc.).
+Code: MIT. Data: CC BY 4.0 (attribution above). Not affiliated with Hugging Face.

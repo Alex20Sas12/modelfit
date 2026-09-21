@@ -115,8 +115,13 @@ def main():
         if len(out) >= 110:
             break
     out.sort(key=lambda x: -x["downloads"])
-    with open(os.path.join(HERE, "models.json"), "w", encoding="utf-8") as f:
+    # атомарная запись: НЕ перезатирать models.json, если fetch провалился (баг 21.09: файл стал [])
+    if not out:
+        print("FETCH YIELDED 0 MODELS — models.json NOT touched"); sys.exit(1)
+    tmp = os.path.join(HERE, "models.json.tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False)
+    os.replace(tmp, os.path.join(HERE, "models.json"))
     print(f"saved {len(out)} models -> models.json")
 
 if __name__ == "__main__":

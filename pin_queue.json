@@ -139,5 +139,33 @@
   "desc": "With 512GB unified memory you can run Kimi K3. See the full measured ranking. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-mac-studio-m3-ultra/",
   "posted": false
+ },
+ {
+  "slug": "compare-kimi-k3-vs-deepseek-v4",
+  "title": "Kimi K3 vs DeepSeek V4: which fits YOUR PC?",
+  "desc": "Side-by-side hardware requirements from measured GGUF files — not formulas. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/compare-kimi-k3-vs-deepseek-v4/",
+  "posted": false
+ },
+ {
+  "slug": "compare-deepseek-v4-vs-gemma-4",
+  "title": "DeepSeek V4 vs Gemma 4: VRAM showdown",
+  "desc": "Which one fits your GPU? Measured numbers, updated daily. #LLM #VRAM",
+  "link": "https://modelfit-eight.vercel.app/compare-deepseek-v4-vs-gemma-4/",
+  "posted": false
+ },
+ {
+  "slug": "compare-kimi-k3-vs-qwen3-27b",
+  "title": "Kimi K3 vs Qwen3 27B: can you run them?",
+  "desc": "Real GGUF sizes, real verdicts for every GPU. #LocalLLM",
+  "link": "https://modelfit-eight.vercel.app/compare-kimi-k3-vs-qwen3-27b/",
+  "posted": false
+ },
+ {
+  "slug": "compare-qwen3-27b-vs-qwen3-coder-30b",
+  "title": "Qwen3 27B vs Qwen3-Coder 30B: hardware cost",
+  "desc": "Measured VRAM/RAM comparison for the two Qwen workhorses. #AI #GGUF",
+  "link": "https://modelfit-eight.vercel.app/compare-qwen3-27b-vs-qwen3-coder-30b/",
+  "posted": false
  }
 ]

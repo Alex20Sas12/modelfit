@@ -274,6 +274,11 @@ d.innerHTML=ok.length?'<span class="pill yes">RUNS</span> '+DATA.name+' at: <b>'
                 body, f"{m['slug']}/", jsonld)
 
 def index_page(models):
+    from compare import PAIRS
+    by_slug = {m["slug"]: m for m in models}
+    cmp_cards = "".join(
+        '<a href="/compare-' + short + '/">' + E(by_slug[sa]["name"]) + " vs " + E(by_slug[sb]["name"]) + '<small>measured hardware comparison</small></a>'
+        for short, sa, sb in PAIRS if sa in by_slug and sb in by_slug)
     cards = []
     for m in models:
         gg = clean_quants(m["ggufs"])
@@ -293,6 +298,8 @@ def index_page(models):
 <a href="/best-llm-for-rtx-3060/">Best LLM for RTX 3060<small>12GB, ranked</small></a>
 <a href="/best-llm-for-8gb-vram/">Best LLM for 8GB VRAM<small>ranked, measured</small></a>
 </div>
+<h2 style="font-size:19px;margin:22px 0 6px">Head-to-head comparisons</h2>
+<div class="grid">{cmp_cards}</div>
 <div class="calc"><input id="q" placeholder="Filter models… (type a name)" oninput="flt()"></div>
 <div class="grid" id="cards">{''.join(cards)}</div>
 <script>
@@ -351,10 +358,12 @@ def main():
             f.write("\n".join(md) + "\n")
         md_lines.append(f"- [{m['name']}]({BASE}/{m['slug']}/index.md): recommended {rec_q} ~{fmt_gb(need_gb(rec_s, m['arch']))}, smallest ~{fmt_gb(need_gb(order[0][1], m['arch']))}")
     from tiers import build_tier_pages, build_picker
+    from compare import build_compare_pages
     tu, tmd = build_tier_pages(models, OUT)
     pu, pmd = build_picker(models, OUT)
-    urls += tu + pu
-    md_lines += tmd + pmd
+    cu, cmd = build_compare_pages(models, OUT)
+    urls += tu + pu + cu
+    md_lines += tmd + pmd + cmd
     with open(os.path.join(OUT, "llms.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(md_lines) + "\n")
     with open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8") as f:

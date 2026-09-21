@@ -60,4 +60,16 @@ fake = {"ggufs": {"Q2_K": 6e9, "Q4_K_M": 14e9, "Q8_0": 28e9, "mmproj": 0.1e9}, "
 f = fits(fake, 24)
 assert f and f[0] == "Q4_K_M", f  # 28*1.2+1.5=35>24*0.92, 14*1.2+1.5=18.3 ok
 assert fits(fake, 8) is None      # 6*1.2+1.5=8.7 > 8*0.92
+# compare: страница существует и цифры из моделей
+from compare import build_compare_pages, PAIRS
+import tempfile
+with tempfile.TemporaryDirectory() as td:
+    cu, cmd = build_compare_pages(ms, td)
+    assert len(cu) == len(PAIRS), f"compare pages {len(cu)} != pairs {len(PAIRS)}"
+    import os
+    for u in cu:
+        slug = u.rsplit("/", 2)[-2]
+        assert os.path.exists(os.path.join(td, slug, "index.html")), slug
+        h = open(os.path.join(td, slug, "index.html"), encoding="utf-8").read()
+        assert 'application/ld+json' in h and "FAQPage" in h
 print("ALL TESTS PASS")

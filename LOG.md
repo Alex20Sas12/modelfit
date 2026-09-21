@@ -2,3 +2,4 @@
 - 19.09 16:27 pin_daily: опубликован пин best-llm-for-rtx-3060, в очереди осталось 18
 - 20.09 10:45 gsc: /what-llm-can-i-run/ NOT_INDEXED | /what-llm-can-i-run/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA"}
 - 20.09 16:27 pin_daily: опубликован пин best-llm-for-16gb-vram, в очереди осталось 17
+- 21.09 10:46 gsc: /what-llm-can-i-run/ NOT_INDEXED | /what-llm-can-i-run/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA"}

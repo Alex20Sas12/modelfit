@@ -11,11 +11,18 @@ GPUS = [
     ("rtx-5090", "RTX 5090", 32, 1.0), ("rtx-4090", "RTX 4090", 24, 1.0),
     ("rtx-3090", "RTX 3090", 24, 1.0), ("rtx-5080", "RTX 5080", 16, 1.0),
     ("rtx-4080", "RTX 4080", 16, 1.0), ("rtx-4070-ti-super", "RTX 4070 Ti Super", 16, 1.0),
+    ("rtx-5070-ti", "RTX 5070 Ti", 16, 1.0),
+    ("rtx-4070-super", "RTX 4070 Super", 12, 1.0), ("rtx-4070", "RTX 4070", 12, 1.0),
     ("rtx-4060-ti-16gb", "RTX 4060 Ti 16GB", 16, 1.0), ("rtx-3080", "RTX 3080 12GB", 12, 1.0),
     ("rtx-3060", "RTX 3060 12GB", 12, 1.0), ("rtx-4060", "RTX 4060 8GB", 8, 1.0),
     ("rtx-3070", "RTX 3070 8GB", 8, 1.0), ("macbook-pro-m4-24gb", "MacBook Pro M4 (24GB)", 24, 0.75),
     ("macbook-air-16gb", "MacBook Air M3/M4 (16GB)", 16, 0.75),
+    ("macbook-air-m2", "MacBook Air M2 (16GB)", 16, 0.75),
+    ("macbook-pro-m4-max", "MacBook Pro M4 Max (64GB)", 64, 0.75),
     ("mac-studio-m3-ultra", "Mac Studio M3 Ultra (512GB)", 512, 0.75),
+    ("system-ram-32gb", "32GB system RAM (CPU inference)", 32, 1.0),
+    ("system-ram-64gb", "64GB system RAM (CPU inference)", 64, 1.0),
+    ("system-ram-128gb", "128GB system RAM (CPU inference)", 128, 1.0),
 ]
 
 def fits(m, cap_gb):

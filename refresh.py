@@ -22,6 +22,9 @@ def main():
     if rc != 0:
         lines.append(f"TESTS FAIL: {out}")
         print("\n".join(lines)); sys.exit(1)
+    rc, out = run("python gh_watch.py", 240)  # GH-лиды «how much vram» — не фатально
+    if rc == 0 and "🚨" in out:
+        lines.append(out.split("\n")[0])
     rc, out = run("python build.py")
     if rc != 0:
         lines.append(f"BUILD FAIL: {out}"); print("\n".join(lines)); sys.exit(1)

@@ -80,7 +80,8 @@ def fetch_model(mid):
             c = json.loads(r.read().decode("utf-8", "replace"))
             tc = c.get("text_config") or c
             for k in ("num_hidden_layers", "num_key_value_heads", "head_dim", "num_attention_heads",
-                      "hidden_size", "num_experts", "model_type", "max_position_embeddings"):
+                      "hidden_size", "num_experts", "num_experts_per_tok", "model_type", "max_position_embeddings",
+                      "kv_lora_rank", "qk_rope_head_dim"):
                 if isinstance(tc.get(k), int):
                     arch[k] = tc[k]
             arch["model_type"] = tc.get("model_type") or c.get("model_type") or ""

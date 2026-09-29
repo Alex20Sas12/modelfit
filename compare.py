@@ -84,7 +84,7 @@ def build_compare_pages(models, OUT):
         html_out = page(f"{slug}/index.html",
                         f"{name_a} vs {name_b}: VRAM & RAM requirements (measured, 2026)",
                         f"{name_a} needs {fmt_gb(pa['rec'][1])}, {name_b} needs {fmt_gb(pb['rec'][1])} at their recommended quants. Side-by-side hardware verdicts from measured GGUF files.",
-                        body, f"{slug}/", jsonld)
+                        body, f"{slug}/", jsonld, og_image=f"{slug}/og.png")
         d = os.path.join(OUT, slug); os.makedirs(d, exist_ok=True)
         with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as fh:
             fh.write(html_out)

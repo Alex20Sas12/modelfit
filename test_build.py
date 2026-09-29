@@ -52,8 +52,34 @@ assert ms[0] not in rel and len(rel) == 8, "related broken"
 htmlpage = model_page(ms[0], ms)
 assert 'application/ld+json' in htmlpage and '"@type": "FAQPage"' in htmlpage
 ld = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', htmlpage, re.S).group(1))
-assert ld["@graph"][1]["@type"] == "FAQPage" and len(ld["@graph"][1]["mainEntity"]) == 4
+assert ld["@graph"][1]["@type"] == "FAQPage" and len(ld["@graph"][1]["mainEntity"]) == 5
 assert 'More models' in htmlpage and htmlpage.count('<a href="/') > 8
+assert 'ollama run hf.co/' in htmlpage and 'tok/s' in htmlpage, "run commands / speed missing"
+# MLA (DeepSeek): kv_lora_rank=512, qk_rope=64, L=61 → 8K ctx ≈ 0.56 GB (vs GQA ~8+ GB)
+from build import kv_cache_gb as _kv
+mla = _kv({"num_hidden_layers": 61, "kv_lora_rank": 512, "qk_rope_head_dim": 64}, 8192)
+assert 0.5 < mla < 0.7, mla
+# params_b sanity: name says 27B, safetensors claims 54B → show 27
+from build import params_b as _pb
+assert abs(_pb({"params": 54e9, "name": "Qwen3.8-27B-Something", "ggufs": {}}) - 27) < 0.01
+# tok_s: MoE активная доля ускоряет
+from build import tok_s, active_frac
+assert active_frac({"num_experts": 128, "num_experts_per_tok": 8}) < 0.2
+assert tok_s(18.0, {"num_experts": 128, "num_experts_per_tok": 8}, 1008) > tok_s(18.0, {}, 1008)
+# tiers: мусорные репо не в топ, дубли семейства схлопываются
+from tiers import rank_for, JUNK
+junkm = {"id": "x/y", "name": "Qwen3.8-27B-Heretic-Abliterated-Uncensored", "slug": "j", "downloads": 10**7,
+         "ggufs": {"Q4_K_S": 20e9}, "arch": {}, "params": 27e9}
+clean = {"id": "unsloth/Qwen3.8-27B", "name": "Qwen3.8-27B", "slug": "c", "downloads": 10**6,
+         "ggufs": {"Q4_K_M": 20.3e9}, "arch": {}, "params": 27e9}
+assert JUNK.search(junkm["name"]) and not JUNK.search(clean["name"])
+tops = rank_for([junkm, clean], 24)
+assert all("Uncensored" not in m["name"] for _, m, _ in tops), tops
+# cheapest_card: 20GB need → used 3090 $650 (24GB fits, дешевле Mac'ов); 200GB → None
+from build import cheapest_card
+c = cheapest_card(20)
+assert c == (650, "Used RTX 3090 24GB"), c
+assert cheapest_card(200) is None
 # tiers: fits() выбирает КРУПНЕЙший квант под потолок
 from tiers import fits, TIERS
 fake = {"ggufs": {"Q2_K": 6e9, "Q4_K_M": 14e9, "Q8_0": 28e9, "mmproj": 0.1e9}, "arch": {}, "params": None}

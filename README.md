@@ -12,7 +12,8 @@ Every number is **measured, not computed**:
 
 - Sizes come from the **actual GGUF files** published on Hugging Face (unsloth, bartowski, ggml-org, lmstudio-community repos), pulled daily via the public HF API.
 - Other sites use the naive `params × bits/8` formula and disagree with each other by 2× on the same model (Kimi K3: 594 GB vs 1.51 TB across five guides). The formula ignores embedding tables, unquantized tensors, and container overhead. The file size never lies.
-- KV cache is computed exactly from `config.json` (GQA formula) when published.
+- KV cache is computed exactly from `config.json` when published — **GQA formula, plus the MLA branch** (`layers × ctx × (kv_lora_rank + qk_rope_head_dim) × 2 B`) for DeepSeek/Kimi-style architectures, where naive GQA math overstates KV by 5–50×.
+- Decode **speed estimates** (tok/s) from memory bandwidth per GPU and MoE active-parameter share — shown on every model page.
 - Auxiliary files (mmproj/mtp/vision modules) are filtered out — they are NOT full-model weights (a common source of wrong "requirements" numbers elsewhere).
 
 ## What you get
@@ -22,6 +23,8 @@ Every number is **measured, not computed**:
 | Per-model verdicts + quant tables | [/unsloth-kimi-k3-gguf/](https://modelfit-eight.vercel.app/unsloth-kimi-k3-gguf/) |
 | Ranked "best LLM for X" | [/best-llm-for-rtx-4090/](https://modelfit-eight.vercel.app/best-llm-for-rtx-4090/), [/best-llm-for-24gb-vram/](https://modelfit-eight.vercel.app/best-llm-for-24gb-vram/), [/best-llm-for-macbook-pro-m4-24gb/](https://modelfit-eight.vercel.app/best-llm-for-macbook-pro-m4-24gb/) |
 | Interactive picker | [/what-llm-can-i-run/](https://modelfit-eight.vercel.app/what-llm-can-i-run/) |
+| Reverse picker (model → cheapest GPU) | [/which-gpu-should-i-buy/](https://modelfit-eight.vercel.app/which-gpu-should-i-buy/) |
+| Guides (VRAM math, quants, runtimes) | [/guides/](https://modelfit-eight.vercel.app/guides/) |
 | Machine-readable data | [/api/models.json](https://modelfit-eight.vercel.app/api/models.json) |
 | For AI engines | [/llms.txt](https://modelfit-eight.vercel.app/llms.txt), markdown twin at `<any-page>/index.md` |
 

@@ -5,3 +5,113 @@ Error: Not authorized
 Contact Support: https://vercel.link/help
  | indexnow 200 (134 urls)
 2026-09-21T11:20:29 | fetch ok, 110 models | deploy ok | indexnow 200 (142 urls)
+2026-09-21T11:45:52 | fetch ok, 110 models | deploy ok | indexnow 200 (148 urls)
+2026-09-25T00:26:04 | fetch ok, 110 models | DEPLOY FAIL rc=1: {
+  "status": "error",
+  "reason": "deploy_failed",
+  "message": "Not authorized",
+  "next": [
+    {
+      "command": "vercel deploy",
+      "when": "retry deploy"
+    }
+  ]
+}
+npm warn exec The following package was not found and will be installed: vercel@60.0.0
+Vercel CLI 60.0.0 (Node.js 24.16.0)
+Deploying modelfit
+ | indexnow 200 (149 urls)
+2026-09-25T09:48:00 | fetch ok, 110 models | DEPLOY FAIL rc=1: {
+  "status": "error",
+  "reason": "deploy_failed",
+  "message": "Not authorized",
+  "next": [
+    {
+      "command": "vercel deploy",
+      "when": "retry deploy"
+    }
+  ]
+}
+npm warn exec The following package was not found and will be installed: vercel@60.0.1
+Vercel CLI 60.0.1 (Node.js 24.16.0)
+Deploying modelfit
+ | indexnow 200 (149 urls)
+2026-09-26T09:47:58 | fetch ok, 110 models | DEPLOY FAIL rc=1: {
+  "status": "error",
+  "reason": "deploy_failed",
+  "message": "Not authorized",
+  "next": [
+    {
+      "command": "vercel deploy",
+      "when": "retry deploy"
+    }
+  ]
+}
+npm warn exec The following package was not found and will be installed: vercel@60.1.3
+Vercel CLI 60.1.3 (Node.js 24.16.0)
+Deploying modelfit
+ | indexnow 200 (149 urls)
+2026-09-28T09:46:59 | fetch ok, 110 models | 🚨 MF-GH: elicify-ai/omnipus-provider-catalog — Registry disagreements in v2026.9.27 (167 row(s)) (https://github.com/elicify-ai/omnipus-provider-catalog/issues/44) | DEPLOY FAIL rc=1: {
+  "status": "error",
+  "reason": "deploy_failed",
+  "message": "Not authorized",
+  "next": [
+    {
+      "command": "vercel deploy",
+      "when": "retry deploy"
+    }
+  ]
+}
+Vercel CLI 60.1.3 (Node.js 24.16.0)
+Deploying modelfit
+ | indexnow 200 (156 urls)
+2026-09-29T09:47:50 | fetch ok, 110 models | 🚨 MF-GH: ragunauth123456-maker/PrismBay — [OPEN-MESH] Qwen + Llama + Mistral + DeepSeek + Gemma (https://github.com/ragunauth123456-maker/PrismBay/issues/116) | DEPLOY FAIL rc=1: {
+  "status": "error",
+  "reason": "deploy_failed",
+  "message": "Not authorized",
+  "next": [
+    {
+      "command": "vercel deploy",
+      "when": "retry deploy"
+    }
+  ]
+}
+npm warn exec The following package was not found and will be installed: vercel@61.0.0
+Vercel CLI 61.0.0 (Node.js 24.16.0)
+Deploying modelfit
+ | indexnow 200 (156 urls)
+2026-09-30T09:47:40 | fetch ok, 110 models | 🚨 MF-GH: ragunauthramsaroop/PrismBay — [OPEN-MESH] Qwen + Llama + Mistral + DeepSeek + Gemma (https://github.com/ragunauthramsaroop/PrismBay/issues/116) | DEPLOY FAIL rc=1: {
+  "status": "error",
+  "reason": "deploy_failed",
+  "message": "Not authorized",
+  "next": [
+    {
+      "command": "vercel deploy",
+      "when": "retry deploy"
+    }
+  ]
+}
+npm warn exec The following package was not found and will be installed: vercel@61.1.0
+Vercel CLI 61.1.0 (Node.js 24.16.0)
+Deploying modelfit
+ | indexnow 200 (156 urls)
+2026-09-30T22:30:32 | fetch ok, 110 models | 🚨 MF-GH: basictech01/uniun — Move DeepSeek R1 to LiteRT-LM and remove MediaPipe (https://github.com/basictech01/uniun/issues/217) | deploy ok | indexnow 200 (156 urls)
+2026-10-04T00:28:01 | fetch ok, 110 models | 🚨 MF-GH: mikeizbicki/cmc-csci143 — Using DeepSeek/Qwen (https://github.com/mikeizbicki/cmc-csci143/issues/814) | DEPLOY FAIL rc=1: Vercel CLI 62.2.0 (Node.js 26.7.0)
+Deploying modelfit
+Error: Not authorized
+Contact Support: https://vercel.link/help
+ | indexnow 200 (156 urls)
+2026-10-04T09:47:10 | fetch ok, 105 models | 🚨 MF-GH: Chestnuts-Sisyphus/gittok — 🤗 Hugging Face Trending Models 2026-10-04 (https://github.com/Chestnuts-Sisyphus/gittok/issues/1596) | DEPLOY FAIL rc=1: Vercel CLI 62.2.0 (Node.js 26.7.0)
+Deploying modelfit
+Error: Not authorized
+Contact Support: https://vercel.link/help
+ | indexnow 200 (151 urls)
+2026-10-05T09:44:15 | fetch ok, 110 models | 🚨 MF-GH: elicify-ai/omnipus-provider-catalog — Registry disagreements in v2026.10.4 (175 row(s)) (https://github.com/elicify-ai/omnipus-provider-catalog/issues/52) | DEPLOY FAIL rc=1: Vercel CLI 62.2.0 (Node.js 26.7.0)
+Deploying modelfit
+Error: Not authorized
+Contact Support: https://vercel.link/help
+ | indexnow 200 (156 urls)
+2026-10-08T21:35:56 | fetch ok, 110 models | 🚨 MF-GH: elicify-ai/omnipus-provider-catalog — Registry disagreements in v2026.10.8 (181 row(s)) (https://github.com/elicify-ai/omnipus-provider-catalog/issues/56) | deploy ok | indexnow 200 (155 urls)
+2026-10-08T21:42:47 | fetch ok, 110 models | deploy ok | indexnow 200 (155 urls)
+2026-10-08T22:01:35 | fetch ok, 110 models | deploy ok | indexnow 200 (155 urls)
+2026-10-08T22:20:49 | fetch ok, 110 models | deploy ok | indexnow 200 (156 urls)

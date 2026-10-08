@@ -8,7 +8,7 @@ import json, re, sys, time, urllib.request, urllib.parse, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 API = "https://huggingface.co/api"
 UA = {"User-Agent": "modelfit/1.0"}
-HYPE = ["kimi-k3", "gemma-4", "deepseek-v4", "qwen3.8", "glm-5", "kimi-k2"]  # ponytail: refresh list when new wave drops
+HYPE = ["kimi-k3", "gemma-4", "deepseek-v4", "qwen3.8", "glm-5", "kimi-k2", "qwen-image-2.1-uncensored-gguf", "xing4.0-29b-a4b-gguf", "orcasaq-2-cyber-27b-uncensored-gguf", ]  # ponytail: refresh list when new wave drops
 # low/mid-tier popular models so "best llm for 8/12/16GB" pages have real data
 SMALL = ["qwen3-8b", "qwen3-4b", "llama-3.1-8b", "phi-4", "gemma-3-4b", "gemma-3-12b",
          "ministral-3", "qwen2.5-7b", "qwen3-14b", "mistral-small", "llama-3.2-3b", "granite-4"]
@@ -80,7 +80,8 @@ def fetch_model(mid):
             c = json.loads(r.read().decode("utf-8", "replace"))
             tc = c.get("text_config") or c
             for k in ("num_hidden_layers", "num_key_value_heads", "head_dim", "num_attention_heads",
-                      "hidden_size", "num_experts", "model_type", "max_position_embeddings"):
+                      "hidden_size", "num_experts", "num_experts_per_tok", "model_type", "max_position_embeddings",
+                      "kv_lora_rank", "qk_rope_head_dim"):
                 if isinstance(tc.get(k), int):
                     arch[k] = tc[k]
             arch["model_type"] = tc.get("model_type") or c.get("model_type") or ""

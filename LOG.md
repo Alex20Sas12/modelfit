@@ -3,3 +3,38 @@
 - 20.09 10:45 gsc: /what-llm-can-i-run/ NOT_INDEXED | /what-llm-can-i-run/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA"}
 - 20.09 16:27 pin_daily: опубликован пин best-llm-for-16gb-vram, в очереди осталось 17
 - 21.09 10:46 gsc: /what-llm-can-i-run/ NOT_INDEXED | /what-llm-can-i-run/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA"}
+- 21.09 16:28 pin_daily: опубликован пин best-llm-for-macbook-pro-m4-24gb, в очереди осталось 20
+- 22.09 10:08 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 22.09 16:28 pin_daily: опубликован пин best-llm-for-8gb-vram, в очереди осталось 19
+- 23.09 16:27 pin_daily: опубликован пин unsloth-kimi-k3-gguf, в очереди осталось 18
+- 24.09 10:09 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 24.09 16:27 pin_daily: опубликован пин best-llm-for-rtx-4090, в очереди осталось 17
+- 25.09 10:08 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 25.09 16:28 pin_daily: опубликован пин what-llm-can-i-run, в очереди осталось 16
+- 26.09 10:09 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 26.09 16:27 pin_daily: опубликован пин best-llm-for-12gb-vram, в очереди осталось 15
+- 27.09 10:06 gsc: er__ |     return await anext(self.gen) |            ^^^^^^^^^^^^^^^^^^^^^ |   File "C:\Users\Admin\AppData\Local\hermes\hermes-agent\venv\Lib\site-packages\websockets\asyncio\connection.py", line 957, in send_context |     raise self.protocol.close_exc from original_exc | websockets.exceptions.ConnectionClosedError: no close frame received or sent
+- 27.09 11:30 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 27.09 16:28 pin_daily: опубликован пин unsloth-gemma-4-12b-it-gguf, в очереди осталось 14
+- 28.09 10:08 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 28.09 16:28 pin_daily: опубликован пин best-llm-for-rtx-3090, в очереди осталось 13
+- 29.09 10:09 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 29.09 16:27 pin_daily: опубликован пин best-llm-for-32gb-vram, в очереди осталось 12
+- 30.09 10:09 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 30.09 16:27 pin_daily: опубликован пин unsloth-qwen3-8-27b-gguf, в очереди осталось 11
+- 01.10 10:09 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 01.10 16:27 pin_daily: опубликован пин best-llm-for-macbook-air-16gb, в очереди осталось 10
+- 02.10 10:09 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 02.10 16:28 pin_daily: опубликован пин best-llm-for-48gb-vram, в очереди осталось 9
+- 03.10 10:11 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ TIMEOUT | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "TIMEOUT"}
+- 03.10 16:28 pin_daily: опубликован пин best-llm-for-rtx-5090, в очереди осталось 8
+- 04.10 10:08 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 04.10 16:28 pin_daily: опубликован пин unsloth-deepseek-v4-flash-0731-gguf, в очереди осталось 7
+- 05.10 10:08 gsc: / TIMEOUT | /best-llm-for-8gb-vram/ NOT_INDEXED | /best-llm-for-8gb-vram/ -> QUOTA | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "TIMEOUT", "/best-llm-for-8gb-vram/": "QUOTA"}
+- 05.10 16:28 pin_daily: опубликован пин best-llm-for-64gb-vram, в очереди осталось 6
+- 06.10 10:06 gsc: / NO_INPUT | /best-llm-for-8gb-vram/ NO_INPUT | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "NO_INPUT", "/best-llm-for-8gb-vram/": "NO_INPUT"}
+- 06.10 16:27 pin_daily: опубликован пин best-llm-for-rtx-4060, в очереди осталось 5
+- 07.10 10:05 gsc: /best-llm-for-12gb-vram/ NO_INPUT | /best-llm-for-16gb-vram/ NO_INPUT | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "NO_INPUT", "/best-llm-for-8gb-vram/": "NO_INPUT", "/best-llm-for-12gb-vram/": "NO_INPUT", "/best-llm-for-16gb-vram/": "NO_INPUT"}
+- 07.10 16:27 pin_daily: опубликован пин best-llm-for-mac-studio-m3-ultra, в очереди осталось 4
+- 08.10 10:05 gsc: /best-llm-for-24gb-vram/ NO_INPUT | /best-llm-for-32gb-vram/ NO_INPUT | DONE batch. progress: {"/what-llm-can-i-run/": "QUOTA", "/": "NO_INPUT", "/best-llm-for-8gb-vram/": "NO_INPUT", "/best-llm-for-12gb-vram/": "NO_INPUT", "/best-llm-for-16gb-vram/": "NO_INPUT", "/best-llm-for-24gb-vram/": "NO_INPUT", "/best-llm-for-32gb-vram/": "NO_INPUT"}
+- 08.10 16:28 pin_daily: опубликован пин compare-kimi-k3-vs-deepseek-v4, в очереди осталось 3

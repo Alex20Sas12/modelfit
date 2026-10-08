@@ -5,3 +5,6 @@ _*.py
 models.json
 urls.txt
 gsc_progress.json
+pin_creds.json
+indexnow_key.txt
+affiliate.json

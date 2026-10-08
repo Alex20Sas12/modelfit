@@ -1,0 +1,746 @@
+[
+ {
+  "url": "https://github.com/containers/ramalama/issues/2949",
+  "repo": "containers/ramalama",
+  "title": "flatpack spawn generates invalid --dry-run",
+  "author": "BansheeHero",
+  "created": "2026-09-26",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/H3108/ai-model-explorer/issues/22",
+  "repo": "H3108/ai-model-explorer",
+  "title": "🆕 新模型待人工补录",
+  "author": "github-actions[bot]",
+  "created": "2026-09-21",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/p-e-w/heretic/issues/449",
+  "repo": "p-e-w/heretic",
+  "title": "[Observation] Punctuation loss after extended generation in uncensored QWEN / DeepSeek models — abse",
+  "author": "YWtheGod",
+  "created": "2026-09-13",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/35",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.22 (167 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-22",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/33",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.21.2 (168 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-21",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/31",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.21 (168 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-21",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/derkmed/universal_audio_instruct/issues/42",
+  "repo": "derkmed/universal_audio_instruct",
+  "title": "Finetune Gemma and Qwen on GCP",
+  "author": "derkmed",
+  "created": "2026-09-17",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/cyclez2000/openrouter-free-models/issues/74",
+  "repo": "cyclez2000/openrouter-free-models",
+  "title": "OpenRouter free model updates (2026-09-18)",
+  "author": "github-actions[bot]",
+  "created": "2026-09-18",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/27",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.18 (170 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-18",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/30",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.20 (168 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-20",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/42",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.26.1 (171 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-26",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/28",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.19 (173 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-19",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/MarissaFamularo/citation-verifier/issues/1",
+  "repo": "MarissaFamularo/citation-verifier",
+  "title": "Possible Laya/OpenJev + Gemma/Qwen > Jev + Claude",
+  "author": "TomLucidor",
+  "created": "2026-09-21",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/kwiscion/machinekind-matura/issues/11",
+  "repo": "kwiscion/machinekind-matura",
+  "title": "Pawel: adjudicate full Qwen and Gemma validation scores",
+  "author": "Pewciu6",
+  "created": "2026-09-26",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/sovrenix/larri/issues/3",
+  "repo": "sovrenix/larri",
+  "title": "Proposal: Relax stockStatus restriction for high-VRAM requirements",
+  "author": "arty-hlr",
+  "created": "2026-09-09",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/pawelchcki/llm-cc/issues/30",
+  "repo": "pawelchcki/llm-cc",
+  "title": "scoring: long-context DeepSeek analysis exceeds 24 GB VRAM and depends on batch order",
+  "author": "pawelchcki",
+  "created": "2026-09-10",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/datnguyenquy94/news-radar/issues/449",
+  "repo": "datnguyenquy94/news-radar",
+  "title": "🤗 Hugging Face Trending Models 2026-09-12",
+  "author": "datnguyenquy94",
+  "created": "2026-09-12",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/IamAngusU/ContextBridge/issues/12",
+  "repo": "IamAngusU/ContextBridge",
+  "title": "[validation] Real-world resilience and proof test matrix",
+  "author": "IamAngusU",
+  "created": "2026-09-24",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/Open-Coding-Society/OCS-Intelligence/issues/12",
+  "repo": "Open-Coding-Society/OCS-Intelligence",
+  "title": "Nikhil - Ground 0",
+  "author": "code259",
+  "created": "2026-09-14",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/Zutfen-LLC/inferswarm/issues/241",
+  "repo": "Zutfen-LLC/inferswarm",
+  "title": "R8-I3 — qualify RX 580 consumer-Polaris Qwen comparator on matched high-RAM host",
+  "author": "ezutfen",
+  "created": "2026-09-23",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/ShaftHQ/SHAFT_ENGINE/issues/6045",
+  "repo": "ShaftHQ/SHAFT_ENGINE",
+  "title": "ROG optimal local writer: FreeToken gpt-oss-20b delivers real OpenCode tasks (README + Java proof)",
+  "author": "MohabMohie",
+  "created": "2026-09-20",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/GenerelSchwerz/llama.cpp/issues/101",
+  "repo": "GenerelSchwerz/llama.cpp",
+  "title": "Misc. bug: out of memory error when not specifying --moe-expert-cache-host-pinned-mb",
+  "author": "jdunne525",
+  "created": "2026-09-20",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/fishlikeX/sm70-attn/issues/1",
+  "repo": "fishlikeX/sm70-attn",
+  "title": "SM70 D256 kernel SIGSEGV on prefill with q4_0 K cache at ubatch>=256 (V100, CUDA 12.6 build)",
+  "author": "doan1minh",
+  "created": "2026-09-24",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/fpt/rs-gallium/issues/290",
+  "repo": "fpt/rs-gallium",
+  "title": "candle: no IQ-series GGUF quant support (GgmlDType has no IQ variant at all)",
+  "author": "fpt",
+  "created": "2026-09-12",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/halo-box/strix-llama.cpp/issues/53",
+  "repo": "halo-box/strix-llama.cpp",
+  "title": "Feature Request: Show some love for Windows 11?",
+  "author": "endyjasmi",
+  "created": "2026-09-14",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/darwin-finch/finch/issues/1317",
+  "repo": "darwin-finch/finch",
+  "title": "Chunked llama.cpp prompt decode intermittently fails with native 'Decode Error -3: unknown'",
+  "author": "schancel",
+  "created": "2026-09-27",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/LostRuins/koboldcpp/issues/2471",
+  "repo": "LostRuins/koboldcpp",
+  "title": "[BUG?] - MMProj and MTP don't work if Autofit for qwen4exp?",
+  "author": "SabinStargem",
+  "created": "2026-09-15",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/lmstudio-ai/lmstudio-bug-tracker/issues/2431",
+  "repo": "lmstudio-ai/lmstudio-bug-tracker",
+  "title": "GPU offload ratio (--gpu <0-1>) always collapses to 1 layer when model size is close to VRAM capacit",
+  "author": "martin3000",
+  "created": "2026-09-22",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/FlashML-org/FreeToken/issues/409",
+  "repo": "FlashML-org/FreeToken",
+  "title": "Qwen3.8-Flash-Next-NVFP4 cannot start on a 12 GB RTX 3060: ~9.9 GiB of unquantized (BF16) attention/",
+  "author": "erikash",
+  "created": "2026-09-07",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/GenerelSchwerz/llama.cpp/issues/96",
+  "repo": "GenerelSchwerz/llama.cpp",
+  "title": "Research:  Some 2x5070ti benchmarks",
+  "author": "vlascik",
+  "created": "2026-09-16",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/Mesh-LLM/mesh-llm/issues/2037",
+  "repo": "Mesh-LLM/mesh-llm",
+  "title": "ci: the Linux CUDA smoke intermittently fails with cudaMalloc out of memory on its second model",
+  "author": "Virgile-pct",
+  "created": "2026-09-25",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/SomeSunlight/Llama_Dispatcher/issues/4",
+  "repo": "SomeSunlight/Llama_Dispatcher",
+  "title": "Log host-memory pressure during model startup",
+  "author": "SomeSunlight",
+  "created": "2026-09-19",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/yuga-hashimoto/and-code/issues/338",
+  "repo": "yuga-hashimoto/and-code",
+  "title": "cannot add local ai ? bro please !!!!!!!!",
+  "author": "tanmaysoren",
+  "created": "2026-09-18",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/gamekeepers/sheshnag/issues/103",
+  "repo": "gamekeepers/sheshnag",
+  "title": "Scheduler fits workers on VRAM alone — capacity must be per-runtime (VRAM + system RAM)",
+  "author": "Ankush-Chander",
+  "created": "2026-09-08",
+  "found": "2026-09-27"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/44",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.27 (167 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-27",
+  "found": "2026-09-28"
+ },
+ {
+  "url": "https://github.com/tilesprivacy/tiles/issues/255",
+  "repo": "tilesprivacy/tiles",
+  "title": "Start-up fails on small-VRAM GPUs: default n_cpu_moe=12 disables llama.cpp auto-fit, whole model for",
+  "author": "SohamKukreti",
+  "created": "2026-09-27",
+  "found": "2026-09-28"
+ },
+ {
+  "url": "https://github.com/leejet/stable-diffusion.cpp/issues/2050",
+  "repo": "leejet/stable-diffusion.cpp",
+  "title": "[Bug] Qwen-Image-2.1: CUDA VAE decode leaves a white block on bright highlights (CPU decode is clean",
+  "author": "Lazel-3002",
+  "created": "2026-09-24",
+  "found": "2026-09-28"
+ },
+ {
+  "url": "https://github.com/ragunauth123456-maker/PrismBay/issues/116",
+  "repo": "ragunauth123456-maker/PrismBay",
+  "title": "[OPEN-MESH] Qwen + Llama + Mistral + DeepSeek + Gemma",
+  "author": "ragunauth123456-maker",
+  "created": "2026-09-28",
+  "found": "2026-09-29"
+ },
+ {
+  "url": "https://github.com/ragunauthramsaroop/PrismBay/issues/116",
+  "repo": "ragunauthramsaroop/PrismBay",
+  "title": "[OPEN-MESH] Qwen + Llama + Mistral + DeepSeek + Gemma",
+  "author": "ragunauthramsaroop",
+  "created": "2026-09-28",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/turbobeest/modelspec/issues/387",
+  "repo": "turbobeest/modelspec",
+  "title": "Coverage SLO breach: thin-evidence",
+  "author": "github-actions[bot]",
+  "created": "2026-09-29",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/MoST-US/MoST-experiment-environment/issues/4",
+  "repo": "MoST-US/MoST-experiment-environment",
+  "title": "Run MST experiments",
+  "author": "MatthewBL",
+  "created": "2026-09-17",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/ahmedtvmer/MAYOS/issues/139",
+  "repo": "ahmedtvmer/MAYOS",
+  "title": "Run Arabic & coach model evaluation",
+  "author": "ahmedtvmer",
+  "created": "2026-09-28",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/47",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.29 (183 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-29",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/Alberto-Codes/typevet/issues/178",
+  "repo": "Alberto-Codes/typevet",
+  "title": "research: establish Gemma 4 vision serving and protocol readiness",
+  "author": "Alberto-Codes",
+  "created": "2026-09-26",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/eneonstudio-dev/tamdeshevle/issues/474",
+  "repo": "eneonstudio-dev/tamdeshevle",
+  "title": "ROGUE INBOX — Swarm Tasks & Handoffs",
+  "author": "eneonstudio-dev",
+  "created": "2026-09-15",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/Niko1221/Strata/issues/57",
+  "repo": "Niko1221/Strata",
+  "title": "Support bounded multi-conversation caching to avoid full prompt rereads in agent workflows",
+  "author": "jeremiahritchey",
+  "created": "2026-09-28",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/basictech01/uniun/issues/217",
+  "repo": "basictech01/uniun",
+  "title": "Move DeepSeek R1 to LiteRT-LM and remove MediaPipe",
+  "author": "samarthsinh2660",
+  "created": "2026-09-15",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/48",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.9.30 (182 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-09-30",
+  "found": "2026-09-30"
+ },
+ {
+  "url": "https://github.com/farzinashouri/geocase/issues/67",
+  "repo": "farzinashouri/geocase",
+  "title": "Bare-track run: free models (Gemma, Qwen) + DeepSeek via OpenRouter",
+  "author": "farzinashouri",
+  "created": "2026-09-30",
+  "found": "2026-10-01"
+ },
+ {
+  "url": "https://github.com/qzyu999/inference-exchange/issues/66",
+  "repo": "qzyu999/inference-exchange",
+  "title": "Enrich model metadata: parameters, MoE, license, release date, HuggingFace integration",
+  "author": "qzyu999",
+  "created": "2026-09-30",
+  "found": "2026-10-01"
+ },
+ {
+  "url": "https://github.com/GenerelSchwerz/llama.cpp/issues/114",
+  "repo": "GenerelSchwerz/llama.cpp",
+  "title": "Eval bug: automatic MoE host registration uses wrong GPU aliases on Windows",
+  "author": "chknd1nner",
+  "created": "2026-10-01",
+  "found": "2026-10-01"
+ },
+ {
+  "url": "https://github.com/zeroa234/ryza-ai-revive/issues/18",
+  "repo": "zeroa234/ryza-ai-revive",
+  "title": "Inconsistent RPG features",
+  "author": "Re17iz",
+  "created": "2026-10-01",
+  "found": "2026-10-01"
+ },
+ {
+  "url": "https://github.com/neoyipeng2018/nlp-wayfinder/issues/100",
+  "repo": "neoyipeng2018/nlp-wayfinder",
+  "title": "Score the free models on the new gold set",
+  "author": "neoyipeng2018",
+  "created": "2026-10-01",
+  "found": "2026-10-02"
+ },
+ {
+  "url": "https://github.com/taufiq0205/custom-bot/issues/28",
+  "repo": "taufiq0205/custom-bot",
+  "title": "DeepSeek generation and Qwen fallback",
+  "author": "taufiq0205",
+  "created": "2026-10-01",
+  "found": "2026-10-02"
+ },
+ {
+  "url": "https://github.com/Coekjan/CrossPool/issues/21",
+  "repo": "Coekjan/CrossPool",
+  "title": "[Feature] Qualify deepseek-ai/DeepSeek-R1-Distill-Qwen-32B with CrossPool",
+  "author": "Coekjan",
+  "created": "2026-10-02",
+  "found": "2026-10-02"
+ },
+ {
+  "url": "https://github.com/KJLavender/japan-trip-bot/issues/1",
+  "repo": "KJLavender/japan-trip-bot",
+  "title": "MCP TOOL AND some func advice",
+  "author": "kcyangf",
+  "created": "2026-10-02",
+  "found": "2026-10-02"
+ },
+ {
+  "url": "https://github.com/scragnog/HOT-Step-CPP/issues/160",
+  "repo": "scragnog/HOT-Step-CPP",
+  "title": "Yue 2 inference causing OOM after 1 run",
+  "author": "Helikaon23s",
+  "created": "2026-09-16",
+  "found": "2026-10-02"
+ },
+ {
+  "url": "https://github.com/farzinashouri/geocase/issues/86",
+  "repo": "farzinashouri/geocase",
+  "title": "Agent run reports",
+  "author": "farzinashouri",
+  "created": "2026-10-02",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/gadievron/raptor/issues/969",
+  "repo": "gadievron/raptor",
+  "title": "Cross-family validation silently no-ops for open-weight models",
+  "author": "danielcuthbert",
+  "created": "2026-10-02",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/eugene-plexus/library/issues/5",
+  "repo": "eugene-plexus/library",
+  "title": "Starter model review — 2026-10-02",
+  "author": "github-actions[bot]",
+  "created": "2026-10-02",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/Niko1221/Strata/issues/513",
+  "repo": "Niko1221/Strata",
+  "title": "Feature Request: experimental support for Qwen3.8-Whittle-MoE-27B-A17.8B",
+  "author": "Vitaliy86",
+  "created": "2026-10-02",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/0xShug0/audio.cpp/issues/764",
+  "repo": "0xShug0/audio.cpp",
+  "title": "Yue2 longform generation crashes the whole process with `GGML_ASSERT(ctx->mem_buffer != NULL) failed",
+  "author": "wangguanghua2099",
+  "created": "2026-10-02",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/50",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.2 (179 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-02",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/ghub1821239/agents-radar/issues/509",
+  "repo": "ghub1821239/agents-radar",
+  "title": "💬 Tech Community AI Digest 2026-10-03",
+  "author": "github-actions[bot]",
+  "created": "2026-10-03",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/jinming1345/agents-radar/issues/178",
+  "repo": "jinming1345/agents-radar",
+  "title": "💬 Tech Community AI Digest 2026-10-03",
+  "author": "github-actions[bot]",
+  "created": "2026-10-03",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/kouweizhu/agents-radar/issues/320",
+  "repo": "kouweizhu/agents-radar",
+  "title": "💬 Tech Community AI Digest 2026-10-03",
+  "author": "github-actions[bot]",
+  "created": "2026-10-03",
+  "found": "2026-10-03"
+ },
+ {
+  "url": "https://github.com/mikeizbicki/cmc-csci143/issues/814",
+  "repo": "mikeizbicki/cmc-csci143",
+  "title": "Using DeepSeek/Qwen",
+  "author": "abhi-namala",
+  "created": "2026-10-03",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/51",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.3 (176 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-03",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/janhq/jan/issues/9119",
+  "repo": "janhq/jan",
+  "title": "bug: Gemma 4 crashes during prompt processing via Jan router; same bundled engine works directly",
+  "author": "MorrowShore",
+  "created": "2026-10-03",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/sarisman84/nixos-flake/issues/55",
+  "repo": "sarisman84/nixos-flake",
+  "title": "Validate that a model entry fits in VRAM before deploying it",
+  "author": "sarisman84",
+  "created": "2026-10-03",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/Niko1221/Strata/issues/654",
+  "repo": "Niko1221/Strata",
+  "title": "HIP (gfx1200) RuntimeError Exception Code: 0xC0000005",
+  "author": "remielowik",
+  "created": "2026-10-03",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/Chestnuts-Sisyphus/gittok/issues/1596",
+  "repo": "Chestnuts-Sisyphus/gittok",
+  "title": "🤗 Hugging Face Trending Models 2026-10-04",
+  "author": "github-actions[bot]",
+  "created": "2026-10-03",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/magnitudedev/magnitude/issues/165",
+  "repo": "magnitudedev/magnitude",
+  "title": "Qwen3.6 35B-A3B: OMP task outputSchema triggers grammar binding error (Too many items, limit 50000)",
+  "author": "lotgood",
+  "created": "2026-10-04",
+  "found": "2026-10-04"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/52",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.4 (175 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-04",
+  "found": "2026-10-05"
+ },
+ {
+  "url": "https://github.com/jinming1345/agents-radar/issues/202",
+  "repo": "jinming1345/agents-radar",
+  "title": "🤗 Hugging Face Trending Models 2026-10-05",
+  "author": "github-actions[bot]",
+  "created": "2026-10-05",
+  "found": "2026-10-05"
+ },
+ {
+  "url": "https://github.com/jinming1345/agents-radar/issues/208",
+  "repo": "jinming1345/agents-radar",
+  "title": "⚙️ AI Infrastructure Digest 2026-10-05",
+  "author": "github-actions[bot]",
+  "created": "2026-10-05",
+  "found": "2026-10-05"
+ },
+ {
+  "url": "https://github.com/currentai-org/os-ai-map/issues/831",
+  "repo": "currentai-org/os-ai-map",
+  "title": "identity digest: 2026-41",
+  "author": "github-actions[bot]",
+  "created": "2026-10-05",
+  "found": "2026-10-06"
+ },
+ {
+  "url": "https://github.com/hoyajigi/model-atlas/issues/97",
+  "repo": "hoyajigi/model-atlas",
+  "title": "discover: new model candidates 2026-10-06",
+  "author": "github-actions[bot]",
+  "created": "2026-10-06",
+  "found": "2026-10-06"
+ },
+ {
+  "url": "https://github.com/hoyajigi/model-atlas/issues/95",
+  "repo": "hoyajigi/model-atlas",
+  "title": "discover: new model candidates 2026-10-05",
+  "author": "github-actions[bot]",
+  "created": "2026-10-05",
+  "found": "2026-10-06"
+ },
+ {
+  "url": "https://github.com/Salish-Studios/quotacove/issues/42",
+  "repo": "Salish-Studios/quotacove",
+  "title": "Catalogue changed — 2026-10-05",
+  "author": "github-actions[bot]",
+  "created": "2026-10-05",
+  "found": "2026-10-06"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/53",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.5 (177 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-05",
+  "found": "2026-10-06"
+ },
+ {
+  "url": "https://github.com/Niko1221/Strata/issues/932",
+  "repo": "Niko1221/Strata",
+  "title": "Dual GPU support",
+  "author": "runningman84",
+  "created": "2026-10-05",
+  "found": "2026-10-06"
+ },
+ {
+  "url": "https://github.com/Lore-Hex/quill-router/issues/1559",
+  "repo": "Lore-Hex/quill-router",
+  "title": "[bot] Model discovery coverage gaps",
+  "author": "github-actions[bot]",
+  "created": "2026-10-06",
+  "found": "2026-10-07"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/54",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.6 (183 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-06",
+  "found": "2026-10-07"
+ },
+ {
+  "url": "https://github.com/cucucachu/unnamed_local_ai_server/issues/312",
+  "repo": "cucucachu/unnamed_local_ai_server",
+  "title": "M16-07: Evaluate Ornith 1.5 35B-A3B as a candidate model",
+  "author": "cucucachu",
+  "created": "2026-10-07",
+  "found": "2026-10-07"
+ },
+ {
+  "url": "https://github.com/axolotl-ai-cloud/axolotl/issues/4122",
+  "repo": "axolotl-ai-cloud/axolotl",
+  "title": "Proposal: add an llms.txt",
+  "author": "BrethofAI",
+  "created": "2026-10-06",
+  "found": "2026-10-07"
+ },
+ {
+  "url": "https://github.com/zhongkaifu/TensorSharp/issues/256",
+  "repo": "zhongkaifu/TensorSharp",
+  "title": "Issues with uncensored Qwen model - I talked to you on Reddit",
+  "author": "jeremyoha450",
+  "created": "2026-10-06",
+  "found": "2026-10-07"
+ },
+ {
+  "url": "https://github.com/Rudra1725/Rudra1725/issues/1",
+  "repo": "Rudra1725/Rudra1725",
+  "title": "[Feature Request] Implement smart fallback presets and hardware-aware defaults for low-VRAM GPUs (<8",
+  "author": "Rudra1725",
+  "created": "2026-10-06",
+  "found": "2026-10-07"
+ },
+ {
+  "url": "https://github.com/bianzhilong2-ctrl/agents-radar/issues/1448",
+  "repo": "bianzhilong2-ctrl/agents-radar",
+  "title": "🤗 Hugging Face Trending Models 2026-10-08",
+  "author": "github-actions[bot]",
+  "created": "2026-10-08",
+  "found": "2026-10-08"
+ },
+ {
+  "url": "https://github.com/pydantic/pydantic-ai/issues/9956",
+  "repo": "pydantic/pydantic-ai",
+  "title": "Add FlexAI provider",
+  "author": "sundar-flex",
+  "created": "2026-10-07",
+  "found": "2026-10-08"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/55",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.7 (172 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-07",
+  "found": "2026-10-08"
+ },
+ {
+  "url": "https://github.com/elicify-ai/omnipus-provider-catalog/issues/56",
+  "repo": "elicify-ai/omnipus-provider-catalog",
+  "title": "Registry disagreements in v2026.10.8 (181 row(s))",
+  "author": "github-actions[bot]",
+  "created": "2026-10-08",
+  "found": "2026-10-08"
+ },
+ {
+  "url": "https://github.com/farzinashouri/geocase/issues/45",
+  "repo": "farzinashouri/geocase",
+  "title": "📋 Development queue",
+  "author": "farzinashouri",
+  "created": "2026-09-27",
+  "found": "2026-10-08"
+ }
+]

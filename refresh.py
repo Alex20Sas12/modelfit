@@ -5,6 +5,7 @@ import subprocess, sys, os, json
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 LOG = os.path.join(HERE, "refresh.log")
+PY = f'"{sys.executable}"'  # ponytail: голый `python` из PATH ≠ питон крона (нет PIL) — всегда свой интерпретатор
 
 def run(cmd, timeout=600):
     r = subprocess.run(cmd, shell=True, cwd=HERE, capture_output=True, text=True, timeout=timeout)
@@ -12,17 +13,20 @@ def run(cmd, timeout=600):
 
 def main():
     lines = []
-    rc, out = run("python fetch.py", 900)
+    rc, out = run(f"{PY} fetch.py", 900)
     if rc != 0:
         lines.append(f"FETCH FAIL rc={rc}: {out}")
     else:
         n = len(json.load(open(os.path.join(HERE, "models.json"), encoding="utf-8")))
         lines.append(f"fetch ok, {n} models")
-    rc, out = run("python test_build.py")
+    rc, out = run(f"{PY} test_build.py")
     if rc != 0:
         lines.append(f"TESTS FAIL: {out}")
         print("\n".join(lines)); sys.exit(1)
-    rc, out = run("python build.py")
+    rc, out = run(f"{PY} gh_watch.py", 240)  # GH-лиды «how much vram» — не фатально
+    if rc == 0 and "🚨" in out:
+        lines.append(out.split("\n")[0])
+    rc, out = run(f"{PY} build.py")
     if rc != 0:
         lines.append(f"BUILD FAIL: {out}"); print("\n".join(lines)); sys.exit(1)
     # deploy (Vercel creds live in XDG_DATA_HOME)

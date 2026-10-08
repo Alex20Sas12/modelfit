@@ -1,0 +1,56 @@
+Vercel CLI 59.23.2 (Node.js 24.16.0)
+Deploying modelfit
+Uploading [--------------------] (0.0B/2.5MB)
+Uploading [=====---------------] (652.9KB/2.5MB)
+Uploading [==========----------] (1.3MB/2.5MB)
+Uploading [===============-----] (1.9MB/2.5MB)
+Uploading [====================] (2.5MB/2.5MB)
+  Inspect         https://vercel.com/keyt9750-7169s-projects/modelfit/CTuSFmoQGtvDdHKXeq5u6sM4XyAa
+  Production      https://modelfit-jok1vnnum-keyt9750-7169s-projects.vercel.app
+Building…
+Building…
+Running build in Washington, D.C., USA (East) – iad1
+Build machine configuration: 2 cores, 8 GB
+Retrieving list of deployment files...
+Previous build caches not available.
+Downloading 335 deployment files...
+[2K[1A[2K[G  Production      https://modelfit-jok1vnnum-keyt9750-7169s-projects.vercel.app
+Completing…
+▲ Aliased         https://modelfit-eight.vercel.app
+{
+  "status": "ok",
+  "deployment": {
+    "id": "dpl_CTuSFmoQGtvDdHKXeq5u6sM4XyAa",
+    "url": "https://modelfit-jok1vnnum-keyt9750-7169s-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/keyt9750-7169s-projects/modelfit/CTuSFmoQGtvDdHKXeq5u6sM4XyAa",
+    "readyState": "READY",
+    "target": "production",
+    "deploymentApiUrl": "https://api.vercel.com/v13/deployments/dpl_CTuSFmoQGtvDdHKXeq5u6sM4XyAa",
+    "buildMachine": {
+      "cores": 2,
+      "memory": 8192,
+      "machine": "basic",
+      "selectionType": "fixed",
+      "selectionSource": "plan-default"
+    }
+  },
+  "message": "Deployment modelfit-jok1vnnum-keyt9750-7169s-projects.vercel.app ready.",
+  "next": [
+    {
+      "command": "vercel git connect",
+      "when": "Automatically deploy changes on every push"
+    },
+    {
+      "command": "vercel curl https://modelfit-jok1vnnum-keyt9750-7169s-projects.vercel.app",
+      "when": "Verify deployment, including when Deployment Protection is enabled"
+    },
+    {
+      "command": "vercel inspect modelfit-jok1vnnum-keyt9750-7169s-projects.vercel.app",
+      "when": "Inspect deployment"
+    },
+    {
+      "command": "vercel deploy --prod",
+      "when": "Promote to production"
+    }
+  ]
+}

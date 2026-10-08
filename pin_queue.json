@@ -26,133 +26,126 @@
   "title": "Best LLMs for MacBook Pro M4 (24GB)",
   "desc": "Unified memory changes the math — see exactly what fits, measured not guessed. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-macbook-pro-m4-24gb/",
-  "posted": false
+  "posted": "2026-09-21"
  },
  {
   "slug": "best-llm-for-8gb-vram",
   "title": "Best LLMs for 8GB VRAM",
   "desc": "Yes, you CAN run good local LLMs on 8GB. Here are the measured picks. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-8gb-vram/",
-  "posted": false
+  "posted": "2026-09-22"
  },
  {
   "slug": "unsloth-kimi-k3-gguf",
   "title": "Kimi K3 VRAM Requirements",
   "desc": "Every quant measured: smallest build 466GB. Can your rig run it? Honest verdict inside. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/unsloth-kimi-k3-gguf/",
-  "posted": false
+  "posted": "2026-09-23"
  },
  {
   "slug": "best-llm-for-rtx-4090",
   "title": "Best LLMs for RTX 4090",
   "desc": "24GB of VRAM — what's the smartest model you can run locally? Ranked by measured sizes. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4090/",
-  "posted": false
+  "posted": "2026-09-24"
  },
  {
   "slug": "what-llm-can-i-run",
   "title": "What LLM Can I Run?",
   "desc": "Type your VRAM, get the honest answer. 110+ models, real GGUF file sizes, free. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/what-llm-can-i-run/",
-  "posted": false
+  "posted": "2026-09-25"
  },
  {
   "slug": "best-llm-for-12gb-vram",
   "title": "Best LLMs for 12GB VRAM",
   "desc": "The sweet-spot budget tier. See which models fit with room for context. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-12gb-vram/",
-  "posted": false
+  "posted": "2026-09-26"
  },
  {
   "slug": "unsloth-gemma-4-12b-it-gguf",
   "title": "Gemma 4 12B Requirements",
   "desc": "Google's new Gemma 4: measured VRAM for every quant. Runs on mid-range GPUs. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/unsloth-gemma-4-12b-it-gguf/",
-  "posted": false
+  "posted": "2026-09-27"
  },
  {
   "slug": "best-llm-for-rtx-3090",
   "title": "Best LLMs for RTX 3090",
   "desc": "The people's champion GPU. Here's what it can really run — measured, not marketing. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-3090/",
-  "posted": false
+  "posted": "2026-09-28"
  },
  {
   "slug": "best-llm-for-32gb-vram",
   "title": "Best LLMs for 32GB VRAM",
   "desc": "RTX 5090 territory: the largest models you can run at home. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-32gb-vram/",
-  "posted": false
+  "posted": "2026-09-29"
  },
  {
   "slug": "unsloth-qwen3-8-27b-gguf",
   "title": "Qwen3.8 27B VRAM Requirements",
   "desc": "One of the most-downloaded GGUFs right now. Every quantization measured for you. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/unsloth-qwen3-8-27b-gguf/",
-  "posted": false
+  "posted": "2026-09-30"
  },
  {
   "slug": "best-llm-for-macbook-air-16gb",
   "title": "Best LLMs for MacBook Air 16GB",
   "desc": "Apple Silicon unified memory = more headroom than you think. Measured picks inside. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-macbook-air-16gb/",
-  "posted": false
+  "posted": "2026-10-01"
  },
  {
   "slug": "best-llm-for-48gb-vram",
   "title": "Best LLMs for 48GB VRAM",
   "desc": "Prosumer tier: RTX 6000 / Mac Studio. What's the best local model you can get? #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-48gb-vram/",
-  "posted": false
+  "posted": "2026-10-02"
  },
  {
   "slug": "best-llm-for-rtx-5090",
   "title": "Best LLMs for RTX 5090",
   "desc": "32GB flagship card — see the ranked list of what fits, by measured file sizes. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-5090/",
-  "posted": false
+  "posted": "2026-10-03"
  },
  {
   "slug": "unsloth-deepseek-v4-flash-0731-gguf",
   "title": "DeepSeek V4 Flash Requirements",
   "desc": "DeepSeek V4 Flash: can your GPU run it? Measured GGUF sizes for every quant. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/unsloth-deepseek-v4-flash-0731-gguf/",
-  "posted": false
+  "posted": "2026-10-04"
  },
  {
   "slug": "best-llm-for-64gb-vram",
   "title": "Best LLMs for 64GB RAM/VRAM",
   "desc": "64GB tier — big MoE models become possible. Which ones fit? Measured. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-64gb-vram/",
-  "posted": false
+  "posted": "2026-10-05"
  },
  {
   "slug": "best-llm-for-rtx-4060",
   "title": "Best LLMs for RTX 4060 8GB",
   "desc": "Budget card, real options. See the largest models that fit 8GB — measured. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4060/",
-  "posted": false
+  "posted": "2026-10-06"
  },
  {
   "slug": "best-llm-for-mac-studio-m3-ultra",
   "title": "Best LLMs for Mac Studio 512GB",
   "desc": "With 512GB unified memory you can run Kimi K3. See the full measured ranking. #llm #localai",
   "link": "https://modelfit-eight.vercel.app/best-llm-for-mac-studio-m3-ultra/",
-  "posted": false
+  "posted": "2026-10-07"
  },
  {
   "slug": "compare-kimi-k3-vs-deepseek-v4",
   "title": "Kimi K3 vs DeepSeek V4: which fits YOUR PC?",
   "desc": "Side-by-side hardware requirements from measured GGUF files — not formulas. #LocalLLM #AI",
   "link": "https://modelfit-eight.vercel.app/compare-kimi-k3-vs-deepseek-v4/",
-  "posted": false
- },
- {
-  "slug": "compare-deepseek-v4-vs-gemma-4",
-  "title": "DeepSeek V4 vs Gemma 4: VRAM showdown",
-  "desc": "Which one fits your GPU? Measured numbers, updated daily. #LLM #VRAM",
-  "link": "https://modelfit-eight.vercel.app/compare-deepseek-v4-vs-gemma-4/",
-  "posted": false
+  "posted": "2026-10-08"
  },
  {
   "slug": "compare-kimi-k3-vs-qwen3-27b",
@@ -166,6 +159,90 @@
   "title": "Qwen3 27B vs Qwen3-Coder 30B: hardware cost",
   "desc": "Measured VRAM/RAM comparison for the two Qwen workhorses. #AI #GGUF",
   "link": "https://modelfit-eight.vercel.app/compare-qwen3-27b-vs-qwen3-coder-30b/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-96gb-vram",
+  "title": "Best LLM for 96GB VRAM",
+  "desc": "Measured GGUF sizes, updated daily from Hugging Face — see what actually fits. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-96gb-vram/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-5080",
+  "title": "Best LLM for RTX 5080",
+  "desc": "Real file sizes + KV-cache math. No formulas — verified numbers. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-5080/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-4080",
+  "title": "Best LLM for RTX 4080",
+  "desc": "Ranked by measured VRAM requirements. Find what runs on your machine. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4080/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-4070-ti-super",
+  "title": "Best LLM for RTX 4070 ti super",
+  "desc": "Head-to-head hardware verdicts from real GGUF sizes, refreshed daily. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4070-ti-super/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-5070-ti",
+  "title": "Best LLM for RTX 5070 ti",
+  "desc": "Measured GGUF sizes, updated daily from Hugging Face — see what actually fits. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-5070-ti/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-4070-super",
+  "title": "Best LLM for RTX 4070 super",
+  "desc": "Real file sizes + KV-cache math. No formulas — verified numbers. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4070-super/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-4070",
+  "title": "Best LLM for RTX 4070",
+  "desc": "Ranked by measured VRAM requirements. Find what runs on your machine. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4070/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-4060-ti-16gb",
+  "title": "Best LLM for RTX 4060 ti 16gb",
+  "desc": "Head-to-head hardware verdicts from real GGUF sizes, refreshed daily. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-4060-ti-16gb/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-3080",
+  "title": "Best LLM for RTX 3080",
+  "desc": "Measured GGUF sizes, updated daily from Hugging Face — see what actually fits. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-3080/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-rtx-3070",
+  "title": "Best LLM for RTX 3070",
+  "desc": "Real file sizes + KV-cache math. No formulas — verified numbers. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-rtx-3070/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-macbook-air-m2",
+  "title": "Best LLM for macbook air m2",
+  "desc": "Ranked by measured VRAM requirements. Find what runs on your machine. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-macbook-air-m2/",
+  "posted": false
+ },
+ {
+  "slug": "best-llm-for-macbook-pro-m4-max",
+  "title": "Best LLM for macbook pro m4 max",
+  "desc": "Head-to-head hardware verdicts from real GGUF sizes, refreshed daily. #LocalLLM #AI",
+  "link": "https://modelfit-eight.vercel.app/best-llm-for-macbook-pro-m4-max/",
   "posted": false
  }
 ]

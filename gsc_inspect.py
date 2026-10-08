@@ -177,7 +177,10 @@ def load_prog():
 
 async def main(limit=5):
     prog = load_prog()
-    todo = [u for u in URLS if prog.get(u) in (None, "QUOTA", "TIMEOUT", "NOT_INDEXED_NO_BTN", "NOT_INDEXED_REQUEST_TIMEOUT")][:limit]
+    # 08.10: пул = живой urls.txt (после чистки build.py), приоритетные URL из статического списка — первыми
+    live = {u[len(BASE):] for u in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "urls.txt"), encoding="utf-8").read().split()}
+    pool = [u for u in URLS if u in live] + sorted(live - set(URLS))
+    todo = [u for u in pool if prog.get(u) in (None, "QUOTA", "TIMEOUT", "NO_INPUT", "NOT_INDEXED_NO_BTN", "NOT_INDEXED_REQUEST_TIMEOUT")][:limit]
     if not todo:
         print("ALL DONE"); return
     tabs = get_tabs()

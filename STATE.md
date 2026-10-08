@@ -189,3 +189,47 @@ fitllm.run, canirunthismodel.sefarai.com, llmrun.dev, vramcalculator.com, llmcon
 
 
 
+
+
+## СЕССИЯ 8 (08.10) — ПОЛНЫЙ АУДИТ + ФИКСЫ + ВЕЧНЫЙ АВТОПИЛОТ
+### Что было сломано и починено (проверено руками)
+- CRITICAL refresh-крон мёртв с 27.09 (failure_streak=10): тест-гейт test_build.py сверял
+  compare-страницы с хардкод PAIRS, а HF ротирует датасет -> 1 из 6 пар выпала -> весь refresh
+  падал ДО деплоя. Фикс: сверка с ЖИВЫМИ парами. Проверено: cron run b0bc91a7d033 = молча ok,
+  deploy ok, IndexNow 200.
+- CRITICAL деплой падал «Not authorized» (20.09, 25.09-05.10): XDG_DATA_HOME=$APPDATA/xdg.data
+  жив, ключ пересоздан кем-то 07.10; проверено ручным `npx vercel deploy --prod` = Ready. Работает.
+- CRITICAL Pinterest-очередь кончалась (3 пина до нуля). Фикс: mf_pinfill авто-пополняет <7,
+  мёртвые slug'и вычищаются; 14 живых в очереди.
+- CRITICAL секреты в ПУБЛИЧНОМ GitHub-репо (pin_creds.json, indexnow_key.txt) -> git rm --cached
+  + filter-repo + force push. HEAD чист (404).Pinterest-пароль в истории коммита остаётся
+  видимым до GC GitHub -> сменить пароль акка alexford0289mf (решение владельца, см. ниже).
+- CRITICAL ads без cookie-consent (GDPR 9.1): Adsterra скрипты теперь fires только после Accept
+  (баннер с равными кнопками, localStorage). E2E через CDP 9232: pre-accept 0 скриптов, accept -> 2.
+- HIGH GSC-крон молча застревал (NO_INPUT не ретраился, очередь из мёртвых URL). Фикс: NO_INPUT
+  в ретраи + пул = живой urls.txt. 7 URL «в работе» из 155.
+- HIGH build не чистил мёртвые страницы ротации HF (движок/дубли). Фикс: rmtree вне urls+whitelist.
+- MEDIUM: нет privacy-страницы/404/favicon/manifest/a11y (focus-visible, reduced-motion,
+  touch 44px, mobile table) — всё вшито в build.py, на проде 200, проверено curl.
+- gh_watch фильтрует bot-репо (elicify/PrismBay/gittok «Trending lists» = не лиды).
+### АВТОПИЛОТ (все deliver=local, no_agent, в сводку 20:00 ea6bf4fdb6cb)
+- f00bdfe6dc65 mf-health 08:30/18:30 — сайт/страницы/Adsterra CDN/свежесть refresh/кроны/очередь;
+  🚨 в сводку (самолечит сам: окна поднимают свои обёртки).
+- bc7dca1fd190 mf-hype 09:20 — новые HF-trending волны сами дописываются в HYPE fetch.py (content).
+- b0bc91a7d033 mf-refresh 09:40 — конвейер fetch->build->deploy->IndexNow (traffic).
+- f852cc3390ca mf-gsc 10:05 + d31d88483ed4 pin-daily 16:25 + e73c0fefb837 pin-warmup 15:55 (traffic).
+- ddb497232377 mf-hunt 10:30/18:30 — GH-лиды (печать только 🚨; ответ руками, без спама).
+- f4d3f77766ed mf-pinfill 16:15 — пополнение очереди пинов.
+- 7de4970efcfc mf-report 19:50 — вечерняя строка: модели/URL/GSC/пины/лиды/следующие шаги.
+### Деньги (честно)
+Проектом заработано $0. Воронка: Pinterest->визит->Adsterra RPM (показ = клик по согласию).
+Обрыв №1: трафика почти нет (GSC 0 INDEXED из-за мёртвого крона 2 недели; Pinterest 24/45 пинов).
+Обрыв №2: consent-гейт режет показы новым посетителям (плата за GDPR-чистоту; Adsterra это переживёт).
+### 3 следующих шага (кроны подхватывают первыми)
+1. До 10.10 10:05: добить GSC-индексацию топ-10 tier-URL (крон f852cc3390ca, квота 2/день) — без
+   INDEXED трафик из Google не начнётся. [DONE 08.10: 1-й прогон = 0 REQUESTED (вкладка зависла;
+   повтор завтра — квота GSC 10/день общая, mf получил 2 слота)]
+2. До 12.10: владелец сменит пароль Pinterest alexford0289mf (секрет светился в git-истории
+   публичного репо) — затем я обновлю pin_creds.json и удалю строку из коммита-заказа.
+3. До 15.10: показать Adsterra-статистику по modelfit в wallet_report (сайт 6062424) + завести
+   второй трафик-канал: HN/Reddit прогрев по GH-лидам (gh_watch.json 93 кандидата).

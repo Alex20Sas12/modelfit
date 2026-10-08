@@ -36,7 +36,11 @@ def main():
             u = it.get("url", "")
             repo = it.get("repository", {}).get("nameWithOwner", "")
             # багрепорты самих llama.cpp/ollama = поддержка, не лиды; ищем личные/форк-issues
+            # 08.10: сепар — trending-фермы (elicify/PrismBay/gittok) постят списки, не вопросы
+            title = (it.get("title") or "")
             if not u or u in seen or repo.split("/")[0] in ("ggml-org", "ollama", "unslothai"):
+                continue
+            if re.search(r"Hugging Face Trending|\[OPEN-MESH\]|Registry disagreements", title, re.I):
                 continue
             seen.add(u)
             fresh.append({"url": u, "repo": repo, "title": (it.get("title") or "")[:100],

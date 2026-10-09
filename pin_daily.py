@@ -42,6 +42,14 @@ def main():
             return
 
     # 2. картинка
+    # ФАЗА 4 гейт текста: title+desc обязаны пройти text_qc (exit 0), иначе НЕ публикуем
+    qc = subprocess.run([sys.executable, r"C:\Users\Admin\fabrika\text_qc.py", "--stdin"],
+                        input=item["title"] + "\n\n" + item["desc"],
+                        capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=60)
+    if qc.returncode != 0:
+        log(f"text_qc ЗАБРАКОВАЛ {item['slug']}: {qc.stdout.strip()[:200]}")
+        print(f"🚨 pin_daily: текст пина {item['slug']} не прошёл гейт — не публикуем")
+        return
     r = run(["pin_gen.py", item["slug"], item["title"]], timeout=180)
     img = os.path.join(BASE, "pins", item["slug"] + ".png")
     if r.returncode != 0 or not os.path.exists(img):

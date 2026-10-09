@@ -8,7 +8,7 @@ import json, re, sys, time, urllib.request, urllib.parse, os
 HERE = os.path.dirname(os.path.abspath(__file__))
 API = "https://huggingface.co/api"
 UA = {"User-Agent": "modelfit/1.0"}
-HYPE = ["kimi-k3", "gemma-4", "deepseek-v4", "qwen3.8", "glm-5", "kimi-k2", "qwen-image-2.1-uncensored-gguf", "xing4.0-29b-a4b-gguf", "orcasaq-2-cyber-27b-uncensored-gguf", ]  # ponytail: refresh list when new wave drops
+HYPE = ["kimi-k3", "gemma-4", "deepseek-v4", "qwen3.8", "glm-5", "kimi-k2", "qwen-image-2.1-uncensored-gguf", "xing4.0-29b-a4b-gguf", "orcasaq-2-cyber-27b-uncensored-gguf", "underdog-saluki-27b-1.0", "qwen-image-2.1-viggle-turbo", ]  # ponytail: refresh list when new wave drops
 # low/mid-tier popular models so "best llm for 8/12/16GB" pages have real data
 SMALL = ["qwen3-8b", "qwen3-4b", "llama-3.1-8b", "phi-4", "gemma-3-4b", "gemma-3-12b",
          "ministral-3", "qwen2.5-7b", "qwen3-14b", "mistral-small", "llama-3.2-3b", "granite-4"]

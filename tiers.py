@@ -4,7 +4,7 @@ Called from build.py main(). Returns (urls, md_lines) to fold into sitemap/llms.
 import json, html, re, statistics
 from build import E, BASE, clean_quants, need_gb, fmt_gb, params_b, page, CLOUD_CTA, make_og
 
-TIERS = [8, 12, 16, 24, 32, 48, 64, 96]
+TIERS = [4, 8, 12, 16, 24, 32, 48, 64, 96]  # 4GB добавлен 08.10: GH-лид Rudra1725#1 + hot-запрос laptop GPUs
 JUNK = re.compile(r"(uncensored|abliterated|heretic|obliterated|nsfw|erp|roleplay|jailbr)", re.I)
 OFFICIAL = ("unsloth", "bartowski", "lmstudio-community", "ggml-org")
 

@@ -233,3 +233,13 @@ fitllm.run, canirunthismodel.sefarai.com, llmrun.dev, vramcalculator.com, llmcon
    публичного репо) — затем я обновлю pin_creds.json и удалю строку из коммита-заказа.
 3. До 15.10: показать Adsterra-статистику по modelfit в wallet_report (сайт 6062424) + завести
    второй трафик-канал: HN/Reddit прогрев по GH-лидам (gh_watch.json 93 кандидата).
+
+
+## БАЗА И ЦИФРЫ (08.10, R7 фиксация — с этих цифр стартуем рост)
+- ДОХОД за всё время: $0 по проекту. Общий баланс Adsterra (5 сайтов аккаунта kataomel_pub): **$0.13**.
+- Adsterra: сайт 6062424 modelfit-eight.vercel.app = «Одобренный», 2 блока (native+socialbar) ✓ панель проверена руками через beta.publishers.adsterra.com.
+- Панель денег: beta.publishers.adsterra.com/websites (старый publishers…/report_*.html = File not found — грабля).
+- Трафик: Google = 0 INDEXED (крон был мёртв 27.09-08.10); Pinterest = 24 пина opub., 13 в очереди; прямых визитов почти нет.
+- Юнит-экономика Adsterra (инструментальные RU/EN сайты, историч. опыт по toolsite): eCPM ~$0.1-0.4 ⇒ $1 ≈ 3-10k показов. Цель недели: первые $0.5-1.
+- КОНКУРЕНТЫ (снимки в _quarantine/2026-10-08/_comp, живые 200): llmrun.dev (гигант: 5000+ VRAM-страниц, домен старый — трафик есть, но цифры ФОРМУЛЬНЫЕ), llmconfigurator.com (есть платные фичи «Buy»), canitrun.dev, localllmchecker.com (есть «Buy»), fitllm.run (тонкий). НАШ КОЗЫРЬ: измеренные GGUF-размеры + ротация daily + index.md/llms.txt для AI-цитат + API. ЧЕМ СИЛЬНЕЕ ИХ: доменное имя не vercel-eight (SEO-доверие) + возраст. ВЫИГРЫВАЕМ так: скорость индексации tier-страниц (GSC крон) + AI-цитируемость (GEO) + GH-лиды (gh_watch).
+- ЗАЩИТА (8B): Pinterest-пароль в git-истории до GC — сменить (ждёт владельца). Vercel-auth 07.10 жив. Индексация-квота GSC 2/день. Ничего не истекает в 14 дней.

@@ -256,3 +256,16 @@ fitllm.run, canirunthismodel.sefarai.com, llmrun.dev, vramcalculator.com, llmcon
 1. До 11.10: GSC добьёт топ-tier (2/день) — первые INDEXED придут; следить сводкой 20:00. [ON TRACK]
 2. До 12.10: смена Pinterest-пароля alexford0289mf (ждёт владельца, вопрос задан 08.10).
 3. До 15.10: второй коммент-лид в день из gh_watch (сепар от бото-ферм уже в коде) + проверка Adsterra-показов через неделю (панель beta/websites).
+
+
+## СЕССИЯ 10 (10.10) — аудит по мастер-промпту, фиксы
+- База: доход $0 (Adsterra $0.13 на все сайты). Сайт 200 на /, 4gb, 8gb, what-llm-can-i-run, api/models.json.
+- CRITICAL найден и закрыт: refresh-крон 10.10 10:05 упал по таймауту 1500 с. Причина 1: gh_watch.py без `import re` (NameError, rc=1). Причина 2 не подтвердилась: fetch = 6.5 мин, test_build 1 с, build 2 с. Полный refresh.py вручную = 306 с, rc=0, deploy ok, indexnow 200.
+- Коммент GitHub Rudra1725#1 (issuecomment-6088686942) ПРАВЛЕН: цифры Llama-3.2-3B убраны (нет в датасете), Qwen3-4B/gemma-3-4b пересчитаны по models.json.
+- health: ложный алерт «2 падения» от самого себя — исключён из самопроверки. Прогон ok.
+- Пароль Pinterest: владелец ответил «нет», не меняем.
+- Фон: ручной прогон refresh b0bc91a7d033 — статус подтвердить по логу refresh.log.
+### 3 next actions (дедлайны)
+1. 11.10 10:05 — GSC-крон: проверить, что NO_INPUT-ретраи дошли до /best-llm-for-12..32gb-vram/ (квота ~2/сайт/день).
+2. 11.10 09:40 — refresh-крон: статус ok в jobs.json (не error). Если снова таймаут — смотреть какой шаг висит (лог _refresh_run.log).
+3. 14.10 — 2-й GH-коммент (1/день руками), не из ботов; Adsterra-показы через панель beta/websites к 17.10.

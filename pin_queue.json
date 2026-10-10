@@ -159,7 +159,7 @@
   "title": "Qwen3 27B vs Qwen3-Coder 30B: hardware cost",
   "desc": "Measured VRAM/RAM comparison for the two Qwen workhorses. #AI #GGUF",
   "link": "https://modelfit-eight.vercel.app/compare-qwen3-27b-vs-qwen3-coder-30b/",
-  "posted": false
+  "posted": "2026-10-10"
  },
  {
   "slug": "best-llm-for-96gb-vram",

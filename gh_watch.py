@@ -3,7 +3,7 @@
 Копит в gh_watch.json, печатает 🚨-строки (подхватит вечерняя сводка). Ответ — полезный
 коммент РУКАМИ через агента (массовый авто-спам = бан, правило answer/2801973).
 Запуск: python gh_watch.py  (вызывается из refresh.py)"""
-import json, os, subprocess, sys, datetime
+import json, os, re, subprocess, sys, datetime
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "gh_watch.json")
